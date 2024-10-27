@@ -1,1 +1,94 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  --bright-blue: oklch(51.01% 0.274 263.83);
+  --electric-violet: oklch(53.18% 0.28 296.97);
+  --french-violet: oklch(47.66% 0.246 305.88);
+  --vivid-pink: oklch(69.02% 0.277 332.77);
+  --hot-red: oklch(61.42% 0.238 15.34);
+  --orange-red: oklch(63.32% 0.24 31.68);
+
+  --gray-900: oklch(19.37% 0.006 300.98);
+  --gray-700: oklch(36.98% 0.014 302.71);
+  --gray-400: oklch(70.9% 0.015 304.04);
+
+  --pill-accent: var(--bright-blue);
+
+  font-family: "GIZGravurTTCyr-Cond", sans-serif;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100vh;
+  display: block;
+  font-size: 16px;
+  color: #353535;
+  -webkit-text-size-adjust: none;
+  scroll-behavior: smooth;
+  background-color: #ababab;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "GIZGravurTTCyr-CondBold", sans-serif;
+  font-weight: bold;
+  margin: 0;
+}
+
+p,
+ul {
+  margin: 0;
+  color: var(--gray-700);
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #2d2d2d;
+}
+
+a:hover {
+  color: #2a8437;
+}
+
+.text__link {
+  color: #51b05f;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+
+  @media (min-width: 1680px) and (max-height: 1024px) {
+    max-width: 1400px;
+  }
+
+  @media (max-width: 1680px) {
+    max-width: 1024px;
+  }
+
+  @media (max-width: 1200px) {
+    max-width: 991px;
+  }
+
+  @media (max-width: 1100px) {
+    max-width: 760px;
+  }
+
+  @media (max-width: 991px) {
+    max-width: none;
+    padding: 0 100px 0 70px;
+  }
+}

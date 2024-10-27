@@ -6,6 +6,9 @@
     "ECOC_2030": {
       "projectType": "application",
       "schematics": {
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
         "@schematics/angular:component": {
           "style": "scss"
         }
@@ -32,6 +35,7 @@
               }
             ],
             "styles": [
+              "src/styles/typography.scss",
               "src/styles.scss"
             ],
             "scripts": []
