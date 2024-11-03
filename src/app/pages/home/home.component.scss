@@ -1,0 +1,70 @@
+.home {
+  &__content {
+    display: flex;
+    gap: 150px;
+    padding: 100px 0px;
+  }
+
+  &__anchor {
+    &-menu {
+      margin-top: 110px;
+    }
+
+    &-link {
+      font-weight: 500;
+    }
+
+    &-list {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -50px;
+        height: 100%;
+        width: 3px;
+        background-color: #000;
+      }
+
+      & > li:before {
+        content: "";
+        position: absolute;
+        left: -62px;
+        width: 28px;
+        height: 28px;
+        border: 5px solid #fff;
+        border-radius: 50%;
+        background-color: #000;
+      }
+    }
+
+    &-link {
+      text-transform: uppercase;
+    }
+  }
+
+  ::ng-deep {
+    .ant-anchor-ink {
+      &::before {
+        display: none;
+      }
+    }
+
+    .ant-anchor-link-active > .ant-anchor-link-title {
+      color: var(--primary-yellow);
+    }
+
+    .ant-anchor-ink-ball {
+      border: 2px solid var(--primary-yellow);
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__content {
+      padding: 50px 0px;
+    }
+  }
+}

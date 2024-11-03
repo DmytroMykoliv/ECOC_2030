@@ -1,0 +1,16 @@
+.footer {
+  height: 71px;
+  background-color: #f4c848;
+
+  &__content {
+    display: flex;
+    column-gap: 4rem;
+    padding: 17px 0;
+  }
+
+  &__img-wrap {
+    & > img {
+      height: 35px;
+    }
+  }
+}

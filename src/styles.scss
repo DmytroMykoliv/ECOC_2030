@@ -1,15 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 html {
   --bright-blue: oklch(51.01% 0.274 263.83);
-  --electric-violet: oklch(53.18% 0.28 296.97);
-  --french-violet: oklch(47.66% 0.246 305.88);
-  --vivid-pink: oklch(69.02% 0.277 332.77);
-  --hot-red: oklch(61.42% 0.238 15.34);
-  --orange-red: oklch(63.32% 0.24 31.68);
+  --primary-yellow: #ffd000;
 
-  --gray-900: oklch(19.37% 0.006 300.98);
   --gray-700: oklch(36.98% 0.014 302.71);
-  --gray-400: oklch(70.9% 0.015 304.04);
 
   --pill-accent: var(--bright-blue);
 
@@ -28,7 +22,7 @@ body {
   color: #353535;
   -webkit-text-size-adjust: none;
   scroll-behavior: smooth;
-  background-color: #ababab;
+  background-color: #fff;
 }
 
 h1,
@@ -60,7 +54,7 @@ a {
 }
 
 a:hover {
-  color: #2a8437;
+  color: var(--primary-yellow);
 }
 
 .text__link {
@@ -76,11 +70,11 @@ a:hover {
   }
 
   @media (max-width: 1680px) {
-    max-width: 1024px;
+    max-width: 1100px;
   }
 
   @media (max-width: 1200px) {
-    max-width: 991px;
+    max-width: 1024px;
   }
 
   @media (max-width: 1100px) {

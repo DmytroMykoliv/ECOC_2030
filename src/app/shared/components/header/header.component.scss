@@ -1,0 +1,36 @@
+.header {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: var(--primary-yellow);
+  background-image: url(/images/home/spraying.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    &-logo {
+      width: 453px;
+
+      & > img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}

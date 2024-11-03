@@ -10,7 +10,7 @@
     display: flex;
     justify-content: flex-end;
     padding-top: 2%;
-    
+
     &-text {
       display: flex;
       align-items: center;
@@ -27,13 +27,13 @@
       width: 0;
       height: 0;
     }
-    
+
     &-left {
       border-left: 35px solid transparent;
       border-right: 0px solid transparent;
       border-bottom: var(--titleHeight) solid #f4c848;
     }
-    
+
     &-right {
       border-left: 0px solid transparent;
       border-right: 35px solid transparent;

@@ -1,0 +1,34 @@
+.lang {
+  --langHeight: 30px;
+
+  display: flex;
+
+  &__dropdown {
+    width: 58px;
+    height: var(--langHeight);
+    background-color: #000;
+    text-align: center;
+
+    & > a {
+      font-weight: 500;
+      color: #fff;
+    }
+  }
+
+  &__left,
+  &__right {
+    height: var(--langHeight);
+  }
+
+  &__left {
+    border-left: 20px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: var(--langHeight) solid #000;
+  }
+
+  &__right {
+    border-left: 0px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: var(--langHeight) solid #000;
+  }
+}

@@ -1,0 +1,26 @@
+.header {
+  &-menu {
+    height: 50px;
+    background-color: var(--primary-yellow);
+  }
+
+  &-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+
+    &__list {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 6%;
+    }
+
+    &__item {
+      font-weight: 500;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+  }
+}

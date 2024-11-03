@@ -1,0 +1,18 @@
+<div class="lang">
+  <div class="lang__left"></div>
+  <div class="lang__dropdown">
+    <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
+      {{ "lang." + currentLang | translate }}
+    </a>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+      <ul nz-menu>
+        @for (lang of langMenu; track lang) {
+        <li nz-menu-item (click)="use(lang)">
+          {{ "lang." + lang | translate }}
+        </li>
+        }
+      </ul>
+    </nz-dropdown-menu>
+  </div>
+  <div class="lang__right"></div>
+</div>
