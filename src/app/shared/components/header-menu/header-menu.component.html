@@ -1,27 +1,33 @@
-<div class="header-menu">
-  <nav class="header-nav container">
-    <ul class="header-nav__list">
-      <li class="header-nav__item" (click)="scrollTo('ecoc_section')">
-        <a>{{ "nav.ecoc" | translate }}</a>
-      </li>
-      <li class="header-nav__item">
-        <a routerLink="/lviv-2030">{{ "nav.lviv_2030" | translate }}</a>
-      </li>
-      <li class="header-nav__item" (click)="scrollTo('anchor_ecoc_2016')">
-        <a>{{ "nav.prehistory" | translate }}</a>
-      </li>
-      <li class="header-nav__item">
-        <a routerLink="/news">{{ "nav.news" | translate }}</a>
-      </li>
-      <li class="header-nav__item">
-        <a routerLink="/contacts">{{ "nav.contacts" | translate }}</a>
-      </li>
-    </ul>
-
-    @if (isLangVisible()) {
-    <div class="header-nav__lang">
-      <app-switch-lang />
+<nz-affix [nzOffsetTop]="0">
+  <div class="header-menu">
+    <div class="header__container container">
+      @if (!isMobile) {
+      <nav class="header-nav">
+        <ul class="header-nav__list">
+          <li class="header-nav__item" (click)="scrollTo('ecoc_section')">
+            <a>{{ "nav.ecoc" | translate }}</a>
+          </li>
+          <li class="header-nav__item">
+            <a routerLink="/lviv-2030">{{ "nav.lviv_2030" | translate }}</a>
+          </li>
+          <li class="header-nav__item" (click)="scrollTo('anchor_ecoc_2016')">
+            <a>{{ "nav.prehistory" | translate }}</a>
+          </li>
+          <li class="header-nav__item">
+            <a routerLink="/news">{{ "nav.news" | translate }}</a>
+          </li>
+          <li class="header-nav__item">
+            <a routerLink="/contacts">{{ "nav.contacts" | translate }}</a>
+          </li>
+        </ul>
+      </nav>
+      } @else {
+      <app-burger-menu />
+      } @if (isLangVisible()) {
+      <div class="header-nav__lang">
+        <app-switch-lang />
+      </div>
+      }
     </div>
-    }
-  </nav>
-</div>
+  </div>
+</nz-affix>

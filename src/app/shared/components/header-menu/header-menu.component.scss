@@ -4,11 +4,17 @@
     background-color: var(--primary-yellow);
   }
 
+  &__container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
   &-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
 
     &__list {
       height: 100%;

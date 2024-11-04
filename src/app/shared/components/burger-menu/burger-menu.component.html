@@ -1,0 +1,41 @@
+<div class="burger-btn">
+  <button nz-button nzType="primary" (click)="open()">
+    <span nz-icon nzType="menu" nzTheme="outline"></span>
+  </button>
+</div>
+
+<nz-drawer
+  [nzClosable]="false"
+  [nzVisible]="visible"
+  nzPlacement="right"
+  [nzWidth]="320"
+  (nzOnClose)="close()"
+>
+  <ng-container *nzDrawerContent>
+    <div class="burger-close">
+      <button nz-button (click)="close()">
+        <span nz-icon nzType="close" nzTheme="outline"></span>
+      </button>
+    </div>
+
+    <nav class="drawer">
+      <ul class="drawer__list">
+        <li class="drawer__item" (click)="scrollTo('ecoc_section')">
+          <a>{{ "nav.ecoc" | translate }}</a>
+        </li>
+        <li class="drawer__item">
+          <a routerLink="/lviv-2030">{{ "nav.lviv_2030" | translate }}</a>
+        </li>
+        <li class="drawer__item" (click)="scrollTo('anchor_ecoc_2016')">
+          <a>{{ "nav.prehistory" | translate }}</a>
+        </li>
+        <li class="drawer__item">
+          <a routerLink="/news">{{ "nav.news" | translate }}</a>
+        </li>
+        <li class="drawer__item">
+          <a routerLink="/contacts">{{ "nav.contacts" | translate }}</a>
+        </li>
+      </ul>
+    </nav>
+  </ng-container>
+</nz-drawer>

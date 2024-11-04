@@ -33,8 +33,6 @@ export class HeaderComponent {
       )
       .subscribe({
         next: (e) => {
-          console.log(e);
-
           if (e.url === '/') {
             this.isHomePage.set(true);
           } else {

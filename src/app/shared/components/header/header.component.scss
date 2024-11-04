@@ -33,4 +33,20 @@
     left: 0;
     width: 100%;
   }
+
+  @media (max-width: 1024px) {
+    &__main {
+      &-logo {
+        width: 340px;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__main {
+      &-logo {
+        width: 40%;
+      }
+    }
+  }
 }

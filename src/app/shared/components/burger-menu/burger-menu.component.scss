@@ -1,0 +1,27 @@
+.burger {
+  &-close {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+::ng-deep {
+  .ant-btn-primary {
+    color: #000;
+    border: 1px solid #000;
+    background-color: var(--primary-yellow);
+  }
+
+  .ant-btn:focus,
+  .ant-btn:hover {
+    color: var(--primary-yellow);
+    border-color: var(--primary-yellow);
+  }
+
+  .ant-btn-primary:active,
+  .ant-btn-primary:focus,
+  .ant-btn-primary:hover {
+    color: #000;
+    border-color: #000;
+    background-color: var(--primary-yellow);
+  }
+}

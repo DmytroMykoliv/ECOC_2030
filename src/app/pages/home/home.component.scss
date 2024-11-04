@@ -66,5 +66,21 @@
     &__content {
       padding: 50px 0px;
     }
+
+    &__anchor {
+      display: none;
+
+      &-list {
+        padding-left: 20px;
+
+        &::before {
+          left: 0;
+        }
+
+        & > li:before {
+          left: -12.5px;
+        }
+      }
+    }
   }
 }
