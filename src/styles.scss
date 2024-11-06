@@ -61,6 +61,12 @@ a:hover {
   color: #51b05f;
 }
 
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
 .container {
   max-width: 1600px;
   margin: 0 auto;

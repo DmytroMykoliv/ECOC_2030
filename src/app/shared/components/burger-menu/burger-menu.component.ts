@@ -1,5 +1,5 @@
 import { ViewportScroller } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 
 import { TranslateModule } from '@ngx-translate/core';
@@ -21,10 +21,12 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
   styleUrl: './burger-menu.component.scss',
 })
 export class BurgerMenuComponent {
+  public isHomePage = input(false);
+
   private scroller = inject(ViewportScroller);
   private router = inject(Router);
 
-  visible = false;
+  public visible = false;
 
   open(): void {
     this.visible = true;
@@ -34,12 +36,19 @@ export class BurgerMenuComponent {
     this.visible = false;
   }
 
-  public scrollTo(id: string) {
+  public scrollToId(id: string) {
     this.close();
-    this.router.navigate(['/']).then(() => {
-      setTimeout(() => {
-        this.scroller.scrollToAnchor(id);
-      }, 0);
-    });
+
+    if (this.isHomePage()) {
+      this.router.navigate(['/']).then(() => {
+        setTimeout(() => {
+          this.scroller.scrollToAnchor(id);
+        }, 0);
+      });
+      return;
+    }
+    setTimeout(() => {
+      this.scroller.scrollToAnchor(id);
+    }, 350);
   }
 }
