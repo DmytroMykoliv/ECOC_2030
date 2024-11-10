@@ -27,6 +27,33 @@
       font-weight: 500;
       text-transform: uppercase;
       white-space: nowrap;
+
+      & > a {
+        position: relative;
+
+        &::after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 1.5px;
+          position: absolute;
+          bottom: 0;
+
+          border-radius: 2px;
+          background-color: #000;
+          opacity: 0;
+          transition: opacity 0.25s ease-in-out, width 0.25s ease-in-out;
+        }
+
+        &:hover {
+          color: #2d2d2d;
+
+          &::after {
+            opacity: 1;
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }

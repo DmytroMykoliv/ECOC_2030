@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { FooterComponent, HeaderComponent } from '@shared/components';
+import { BackToTopComponent, FooterComponent } from '@shared/components';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TranslateModule, FooterComponent],
+  imports: [RouterOutlet, TranslateModule, BackToTopComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   styles: `

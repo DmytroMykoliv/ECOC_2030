@@ -12,12 +12,13 @@
       <app-lviv-2030 />
     </section> -->
 
-    <section class="home__content" id="prehistory_section">
+    <section class="home__content" id="prehistory_section" #prehistory_section>
       <aside class="home__anchor">
         <nz-anchor
           class="home__anchor-menu"
           nzOffsetTop="110"
-          nzBounds="100"
+          nzBounds="50"
+          [nzAffix]="false"
           [nzShowInkInFixed]="true"
         >
           <nz-link
@@ -209,8 +210,8 @@
       </aside>
     </section>
 
-    <section class="home__ecoc" id="news_section">
-      <app-news />
+    <section class="home__ecoc" id="news_list_section">
+      <app-news-list />
     </section>
   </div>
 </main>

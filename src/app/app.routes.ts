@@ -13,4 +13,16 @@ export const routes: Routes = [
         (m) => m.LVIV_2030_ROUTES
       ),
   },
+  {
+    path: 'news',
+    loadChildren: () =>
+      import('./pages/news/news.routes').then((m) => m.NEWS_ROUTES),
+  },
+  {
+    path: 'news/:id',
+    loadChildren: () =>
+      import('./pages/news-detail/news-detail.routes').then(
+        (m) => m.NEWS_DETAIL_ROUTES
+      ),
+  },
 ];

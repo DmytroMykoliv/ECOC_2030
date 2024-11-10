@@ -1,5 +1,6 @@
 .home {
   &__content {
+    position: relative;
     display: flex;
     gap: 150px;
     padding: 100px 0px;
@@ -7,7 +8,8 @@
 
   &__anchor {
     &-menu {
-      margin-top: 110px;
+      position: sticky;
+      top: 110px;
     }
 
     &-link {
@@ -44,6 +46,10 @@
     &-link {
       text-transform: uppercase;
     }
+  }
+
+  &__ecoc {
+    position: relative;
   }
 
   ::ng-deep {

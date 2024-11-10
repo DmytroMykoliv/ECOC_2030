@@ -1,0 +1,21 @@
+.ant-btn {
+  &-primary {
+    color: #000;
+    border: 1px solid #000;
+    background-color: var(--primary-yellow);
+  }
+
+  &:focus,
+  &:hover {
+    color: var(--primary-yellow);
+    border-color: var(--primary-yellow);
+  }
+
+  &-primary:active,
+  &-primary:focus,
+  &-primary:hover {
+    color: #000;
+    border-color: #000;
+    background-color: var(--primary-yellow);
+  }
+}

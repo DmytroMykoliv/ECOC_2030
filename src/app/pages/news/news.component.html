@@ -1,0 +1,47 @@
+<header class="header__menu">
+  <app-header-menu [isLangVisible]="true" />
+</header>
+
+<div class="news container">
+  <section class="news__section news__head">
+    <h1 class="news__title">
+      {{ "title.news" | translate }}
+    </h1>
+  </section>
+
+  <hr />
+
+  <div class="news__list news__section">
+    <div class="news__col">
+      <a
+        href="/news/the-competition-for-the-title-of-the-next-belgian-european-capital-of-culture-in-2030-is-underway-in-october-2024-we-will-know-the-finalists"
+        class="news__link"
+      >
+        <div class="news__link-wrap-img">
+          <img
+            src="https://www.ecoc2030.be/strapi/uploads/Adobe_Stock_296345580_2_f42255a5c3.jpeg"
+            class="news__link-img"
+          />
+        </div>
+        <h2 class="news__list-title">
+          The competition for the next Belgian ECOC in 2030 is underway. In
+          October 2024 we will know the finalists!
+        </h2>
+      </a>
+    </div>
+
+    <div class="news__col">
+      <a href="/news/website-ecoc-2030-be-online" class="news__link">
+        <div class="news__link-wrap-img">
+          <img
+            src="https://www.ecoc2030.be/strapi/uploads/Europese_vlag_7c3b086d0d.jpg"
+            class="news__link-img"
+          />
+        </div>
+        <h2 class="news__list-title">
+          The time has come! ECOC 2030 Belgium has started
+        </h2>
+      </a>
+    </div>
+  </div>
+</div>
