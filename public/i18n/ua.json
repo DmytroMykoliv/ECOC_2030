@@ -13,5 +13,9 @@
   "home.anchor.ecoc_2024": "ЄСК 2024",
   "home.anchor.applying_lviv": "Аплікування Львова",
   "title.news": "Новини",
-  "title.lviv_2030": "Львів 2030"
+  "title.lviv_2030": "Львів 2030",
+  "btn.cancel": "Відміна",
+  "btn.save": "Зберегти",
+  "btn.add_new": "Додати новину",
+  "validator.required": "Обов'язково"
 }

@@ -13,5 +13,9 @@
   "home.anchor.ecoc_2024": "ECOC 2024",
   "home.anchor.applying_lviv": "Applying Lviv",
   "title.news": "News",
-  "title.lviv_2030": "Lviv 2030"
+  "title.lviv_2030": "Lviv 2030",
+  "btn.cancel": "Cancel",
+  "btn.save": "Save",
+  "btn.add_new": "Add new",
+  "validator.required": "Required"
 }

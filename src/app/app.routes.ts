@@ -25,4 +25,10 @@ export const routes: Routes = [
         (m) => m.NEWS_DETAIL_ROUTES
       ),
   },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./pages/admin/admin.routes').then((m) => m.ADMIN_ROUTES),
+  },
+  { path: '**', redirectTo: '/auth/login' },
 ];

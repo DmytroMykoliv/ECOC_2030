@@ -1,5 +1,9 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, HostListener, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+  signal,
+} from '@angular/core';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 
@@ -9,9 +13,9 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
   imports: [NzButtonModule, NzIconModule],
   templateUrl: './back-to-top.component.html',
   styleUrl: './back-to-top.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BackToTopComponent {
-  private document = inject(DOCUMENT);
   public windowScrolled = signal(false);
 
   @HostListener('window:scroll', [])

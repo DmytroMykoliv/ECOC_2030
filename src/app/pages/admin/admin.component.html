@@ -1,0 +1,72 @@
+<header class="header__menu">
+  <app-header-menu [isLangVisible]="true" />
+</header>
+
+<main class="page admin container">
+  <section class="page__section page__head">
+    <h1 class="page__title">News List</h1>
+  </section>
+
+  <hr />
+
+  <section class="page__section">
+    <div class="admin__btn-add-new">
+      <button
+        nz-button
+        nzType="primary"
+        nzShape="round"
+        (click)="openAddModal()"
+      >
+        {{ "btn.add_new" | translate }}
+      </button>
+    </div>
+
+    <nz-table
+      #basicTable
+      [nzData]="news"
+      nzShowPagination
+      nzShowSizeChanger
+      [nzLoading]="isLoading()"
+    >
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Image</th>
+          <th>Title</th>
+          <th nzWidth="115px">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (data of basicTable.data; track data.title) {
+        <tr>
+          <td>{{ data.created_at | date : "dd.mm.yyyy" }}</td>
+          <td class="admin-table__td admin-table__td--img">
+            <nz-avatar
+              [nzShape]="'square'"
+              [nzSize]="64"
+              [nzSrc]="data.img_url"
+            ></nz-avatar>
+          </td>
+          <td>{{ data.title }}</td>
+          <td class="admin-table__td">
+            <button nz-button nzShape="circle" (click)="openAddModal(data)">
+              <span nz-icon nzType="edit" nzTheme="outline"></span>
+            </button>
+            <nz-divider nzType="vertical"></nz-divider>
+            <button
+              nz-button
+              nzType="primary"
+              nzShape="circle"
+              (click)="delete(data)"
+            >
+              <span nz-icon nzType="delete" nzTheme="outline"></span>
+            </button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </nz-table>
+  </section>
+</main>
+
+<app-add-news />

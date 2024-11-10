@@ -16,9 +16,6 @@ import { BackToTopComponent, FooterComponent } from '@shared/components';
       justify-content: space-between;
       min-height: 100vh;
     }
-    .outlet {
-      height: 100%;
-    }
   `,
 })
 export class AppComponent {

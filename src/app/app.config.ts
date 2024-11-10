@@ -3,7 +3,11 @@ import {
   provideZoneChangeDetection,
   importProvidersFrom,
 } from '@angular/core';
-import { provideRouter, withInMemoryScrolling } from '@angular/router';
+import {
+  provideRouter,
+  withEnabledBlockingInitialNavigation,
+  withInMemoryScrolling,
+} from '@angular/router';
 
 import { routes } from './app.routes';
 import { uk_UA, provideNzI18n } from 'ng-zorro-antd/i18n';
@@ -14,6 +18,9 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { firebaseConfig } from './firebase.config';
 
 registerLocaleData(uk);
 
@@ -25,8 +32,11 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(
       routes,
+      withEnabledBlockingInitialNavigation(),
       withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })
     ),
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideFirestore(() => getFirestore()),
     provideNzI18n(uk_UA),
     importProvidersFrom(FormsModule),
     provideAnimationsAsync(),
