@@ -1,6 +1,12 @@
 <div class="home-section">
   <aside class="home-section__aside home-section__aside--left">
-    <h1 class="home-section__title">Lorem ipsum dolor sit amet.</h1>
+    <h1 class="home-section__title">
+      {{
+        content()?.title
+          ? (content().title | translate)
+          : "Lorem ipsum dolor sit amet."
+      }}
+    </h1>
   </aside>
 
   <aside class="home-section__aside home-section__aside--right">

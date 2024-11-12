@@ -1,10 +1,11 @@
 import { Component, input } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { NzSafeAny } from 'ng-zorro-antd/core/types';
 
 @Component({
   selector: 'app-grid-section',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './grid-section.component.html',
   styleUrls: [
     './grid-section.component.scss',

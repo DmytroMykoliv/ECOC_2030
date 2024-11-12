@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { GridSectionComponent } from '@shared/components';
+import { NzSafeAny } from 'ng-zorro-antd/core/types';
 
 @Component({
   selector: 'app-ecoc',
@@ -12,4 +13,6 @@ import { GridSectionComponent } from '@shared/components';
     '../../../../../styles/grid-section.scss',
   ],
 })
-export class EcocComponent {}
+export class EcocComponent {
+  public content: NzSafeAny = input();
+}

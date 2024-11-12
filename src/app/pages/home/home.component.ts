@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzAnchorModule } from 'ng-zorro-antd/anchor';
-import { EcocComponent, NewsListComponent } from './components';
+import {
+  ContactsComponent,
+  EcocComponent,
+  NewsListComponent,
+} from './components';
 import { HeaderComponent } from '@shared/components';
 
 @Component({
@@ -13,6 +17,7 @@ import { HeaderComponent } from '@shared/components';
     EcocComponent,
     NzAnchorModule,
     NewsListComponent,
+    ContactsComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
