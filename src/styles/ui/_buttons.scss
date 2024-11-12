@@ -1,7 +1,7 @@
 .ant-btn {
   &-primary {
     color: #000;
-    border: 1px solid #000;
+    border: 1px solid transparent;
     background-color: var(--primary-yellow);
   }
 
@@ -9,6 +9,11 @@
   &:hover {
     color: var(--primary-yellow);
     border-color: var(--primary-yellow);
+  }
+
+  &-link:focus,
+  &-link:hover {
+    border-color: transparent;
   }
 
   &-primary:active,

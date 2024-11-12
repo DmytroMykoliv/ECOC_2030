@@ -18,5 +18,6 @@
   "btn.cancel": "Cancel",
   "btn.save": "Save",
   "btn.add_new": "Add new",
+  "btn.read_more": "Read more",
   "validator.required": "Required"
 }

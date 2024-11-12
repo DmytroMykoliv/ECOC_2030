@@ -1,5 +1,4 @@
-import { ViewportScroller } from '@angular/common';
-import { Component, inject, input, output } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 
 import { TranslateModule } from '@ngx-translate/core';
@@ -23,7 +22,6 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 export class BurgerMenuComponent {
   public isHomePage = input(false);
 
-  private scroller = inject(ViewportScroller);
   private router = inject(Router);
 
   public visible = false;
@@ -36,19 +34,28 @@ export class BurgerMenuComponent {
     this.visible = false;
   }
 
-  public scrollToId(id: string) {
+  public scrollToId(id: string, offset = 60) {
     this.close();
 
     if (this.isHomePage()) {
       this.router.navigate(['/']).then(() => {
         setTimeout(() => {
-          this.scroller.scrollToAnchor(id);
+          this._scroll(id, offset);
         }, 0);
       });
       return;
     }
     setTimeout(() => {
-      this.scroller.scrollToAnchor(id);
+      this._scroll(id, offset);
     }, 350);
+  }
+
+  private _scroll(id: string, offset: number = 0) {
+    const element = document.getElementById(id);
+
+    if (element) {
+      const y = element.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
   }
 }

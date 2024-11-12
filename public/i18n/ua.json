@@ -18,5 +18,6 @@
   "btn.cancel": "Відміна",
   "btn.save": "Зберегти",
   "btn.add_new": "Додати новину",
+  "btn.read_more": "Читати більше",
   "validator.required": "Обов'язково"
 }

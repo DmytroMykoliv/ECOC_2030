@@ -1,7 +1,13 @@
-<div class="container">
-  <h2>{{ "title.news" | translate }}</h2>
+<div class="container news">
+  <div class="news__top">
+    <h2>{{ "title.news" | translate }}</h2>
 
-  <div class="news">
+    <button nz-button nzShape="round" routerLink="/news">
+      {{ "btn.read_more" | translate }}
+    </button>
+  </div>
+
+  <div class="news__list">
     <div class="news__col">
       <a
         href="/news/the-competition-for-the-title-of-the-next-belgian-european-capital-of-culture-in-2030-is-underway-in-october-2024-we-will-know-the-finalists"

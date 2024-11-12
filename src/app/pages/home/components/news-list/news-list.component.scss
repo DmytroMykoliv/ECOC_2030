@@ -1,8 +1,16 @@
 .news {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  row-gap: 2rem;
-  padding: 3rem 0;
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 1%;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    row-gap: 2rem;
+    padding: 3rem 0;
+  }
 
   &__col {
     grid-column: span 12 / span 12;
@@ -51,7 +59,9 @@
   }
 
   @media (min-width: 768px) {
-    column-gap: 2rem;
+    &__list {
+      column-gap: 2rem;
+    }
 
     &__col {
       grid-column: span 6 / span 6;

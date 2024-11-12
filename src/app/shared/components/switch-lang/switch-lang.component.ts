@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 enum ELang {
   en = 'en',
@@ -10,7 +10,7 @@ enum ELang {
 @Component({
   selector: 'app-switch-lang',
   standalone: true,
-  imports: [TranslateModule, NzDropDownModule],
+  imports: [TranslateModule, NzButtonModule],
   templateUrl: './switch-lang.component.html',
   styleUrl: './switch-lang.component.scss',
 })

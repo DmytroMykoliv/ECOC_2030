@@ -8,7 +8,8 @@
   <defs>
     <style>
       .cls-1 {
-        font-family: "GIZGravurTTCyr-CondBold", sans-serif;
+        font-family: "URWDIN", sans-serif;
+        font-weight: bold;
       }
 
       .cls-1 {
@@ -29,7 +30,9 @@
       }
 
       .cls-2 {
-        font-family: "GIZGravurTTCyr-Cond", sans-serif;
+        font-family: "URWDIN", sans-serif;
+        font-weight: bold;
+        font-style: italic;
         font-size: 35px;
       }
 
@@ -38,6 +41,8 @@
       }
 
       .cls-10 {
+        font-family: "URWDIN", sans-serif;
+        font-weight: bold;
         fill: #ffd000;
         font-size: 74.75px;
       }
