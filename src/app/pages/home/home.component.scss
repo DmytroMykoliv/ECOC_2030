@@ -3,7 +3,7 @@
     position: relative;
     display: flex;
     gap: 150px;
-    padding: 100px 0px;
+    padding: 6rem 0px;
   }
 
   &__anchor {
@@ -40,7 +40,17 @@
         border: 5px solid #fff;
         border-radius: 50%;
         background-color: #000;
+        transition: border 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
       }
+
+      & > li.active:before {
+        border: 5px solid var(--primary-yellow);
+        box-shadow: 0px 0px 10px 2px var(--primary-yellow);
+      }
+    }
+
+    &-date {
+      margin-bottom: 1rem;
     }
 
     &-link {
@@ -70,21 +80,32 @@
 
   @media (max-width: 767px) {
     &__content {
-      padding: 50px 0px;
+      padding: 3rem 0px;
+    }
+
+    &__prehistory {
+      padding: 6rem 0 0;
     }
 
     &__anchor {
       display: none;
 
       &-list {
-        padding-left: 20px;
+        padding-left: 25px;
 
         &::before {
+          height: 99%;
           left: 0;
         }
 
-        & > li:before {
-          left: -12.5px;
+        & > li {
+          position: relative;
+          top: -85px;
+
+          &:before {
+            left: -36.5px;
+            top: 58px;
+          }
         }
       }
     }

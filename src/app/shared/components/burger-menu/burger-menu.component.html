@@ -12,7 +12,9 @@
   (nzOnClose)="close()"
 >
   <ng-container *nzDrawerContent>
-    <div class="burger-close">
+    <div class="burger-head">
+      <app-switch-lang />
+
       <button nz-button (click)="close()">
         <span nz-icon nzType="close" nzTheme="outline"></span>
       </button>
@@ -29,8 +31,8 @@
         <li class="drawer__item" (click)="scrollToId('anchor_ecoc_2016')">
           <a>{{ "nav.prehistory" | translate }}</a>
         </li>
-        <li class="drawer__item" (click)="scrollToId('news_list_section')">
-          <a>{{ "nav.news" | translate }}</a>
+        <li class="drawer__item">
+          <a routerLink="/news">{{ "nav.news" | translate }}</a>
         </li>
         <li class="drawer__item" (click)="scrollToId('contacts_section')">
           <a>{{ "nav.contacts" | translate }}</a>

@@ -1,11 +1,5 @@
 <div class="container news">
-  <div class="news__top">
-    <h2>{{ "title.news" | translate }}</h2>
-
-    <button nz-button nzShape="round" routerLink="/news">
-      {{ "btn.read_more" | translate }}
-    </button>
-  </div>
+  <h2 class="news__title">{{ "title.news" | translate }}</h2>
 
   <div class="news__list">
     <div class="news__col">
@@ -19,10 +13,10 @@
             class="news__link-img"
           />
         </div>
-        <h2 class="news__title">
+        <h3 class="news__list-title">
           The competition for the next Belgian ECOC in 2030 is underway. In
           October 2024 we will know the finalists!
-        </h2>
+        </h3>
       </a>
     </div>
 
@@ -34,10 +28,16 @@
             class="news__link-img"
           />
         </div>
-        <h2 class="news__title">
+        <h3 class="news__list-title">
           The time has come! ECOC 2030 Belgium has started
-        </h2>
+        </h3>
       </a>
     </div>
+  </div>
+
+  <div class="news__more">
+    <button nz-button nzShape="round" routerLink="/news" class="news__more-btn">
+      {{ "btn.read_more" | translate }}
+    </button>
   </div>
 </div>

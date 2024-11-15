@@ -5,6 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { SwitchLangComponent } from '../switch-lang/switch-lang.component';
 
 @Component({
   selector: 'app-burger-menu',
@@ -15,6 +16,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
     NzButtonModule,
     NzDrawerModule,
     NzIconModule,
+    SwitchLangComponent
   ],
   templateUrl: './burger-menu.component.html',
   styleUrl: './burger-menu.component.scss',

@@ -4,6 +4,13 @@
       @if (!isMobile) {
       <nav class="header-nav">
         <ul class="header-nav__list">
+          @if (!isHomePage()) {
+          <li class="header-nav__item">
+            <a routerLink="/">
+              <img src="/images/logo.svg" alt="logo ecoc" />
+            </a>
+          </li>
+          }
           <li class="header-nav__item" (click)="scrollTo('ecoc_section')">
             <a>{{ "nav.ecoc" | translate }}</a>
           </li>
@@ -13,9 +20,15 @@
           <li class="header-nav__item" (click)="scrollTo('anchor_ecoc_2016')">
             <a>{{ "nav.prehistory" | translate }}</a>
           </li>
+          @if (!isHomePage()) {
+          <li class="header-nav__item">
+            <a routerLink="/news">{{ "nav.news" | translate }}</a>
+          </li>
+          } @else {
           <li class="header-nav__item" (click)="scrollTo('news_list_section')">
             <a>{{ "nav.news" | translate }}</a>
           </li>
+          }
           <li class="header-nav__item" (click)="scrollTo('contacts_section')">
             <a>{{ "nav.contacts" | translate }}</a>
           </li>
@@ -23,10 +36,6 @@
       </nav>
       } @else {
       <app-burger-menu [isHomePage]="isLangVisible()" />
-      } @if (isLangVisible()) {
-      <div class="header-nav__lang">
-        <app-switch-lang />
-      </div>
       }
     </div>
   </div>

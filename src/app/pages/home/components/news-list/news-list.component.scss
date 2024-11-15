@@ -1,8 +1,7 @@
 .news {
-  &__top {
-    display: flex;
-    align-items: center;
-    gap: 1%;
+  &__title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
   &__list {
@@ -32,11 +31,11 @@
     border-radius: 5px 5px 0 0;
   }
 
-  &__col:hover &__title {
+  &__col:hover &__list-title {
     padding: 0 10px;
   }
 
-  &__title {
+  &__list-title {
     transition: padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -58,13 +57,42 @@
     }
   }
 
+  &__more {
+    display: flex;
+    justify-content: center;
+
+    &-btn {
+      max-width: 200px;
+      width: 100%;
+      height: 40px;
+      font-weight: 500;
+    }
+  }
+
   @media (min-width: 768px) {
+    &__title {
+      font-size: 4rem;
+    }
+
     &__list {
       column-gap: 2rem;
     }
 
     &__col {
       grid-column: span 6 / span 6;
+    }
+
+    &__more {
+      &-btn {
+        max-width: 150px;
+        height: 35px;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &__title {
+      font-size: 5rem;
     }
   }
 }

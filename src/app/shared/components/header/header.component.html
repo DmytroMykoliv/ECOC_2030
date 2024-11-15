@@ -10,11 +10,22 @@
     </div>
 
     <div class="header__lang">
-      <app-switch-lang />
+      <nz-affix [nzOffsetTop]="10">
+        @if (isMobile) {
+        <app-burger-menu [isHomePage]="isHomePage()" />
+        } @else {
+        <app-switch-lang />
+        }
+      </nz-affix>
     </div>
   </div>
 
+  @if (!isMobile) {
   <div class="header__menu">
-    <app-header-menu [isLangVisible]="!isHomePage()" />
+    <app-header-menu
+      [isHomePage]="isHomePage()"
+      [isLangVisible]="!isHomePage()"
+    />
   </div>
+  }
 </header>

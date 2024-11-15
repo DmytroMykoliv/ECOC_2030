@@ -1,7 +1,8 @@
 .ant-btn {
+  border: 1px solid #080808;
+
   &-primary {
     color: #000;
-    border: 1px solid transparent;
     background-color: var(--primary-yellow);
   }
 

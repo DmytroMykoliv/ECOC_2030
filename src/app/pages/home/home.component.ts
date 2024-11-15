@@ -7,6 +7,7 @@ import {
   NewsListComponent,
 } from './components';
 import { HeaderComponent } from '@shared/components';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -18,8 +19,16 @@ import { HeaderComponent } from '@shared/components';
     NzAnchorModule,
     NewsListComponent,
     ContactsComponent,
+    DatePipe,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  public activeAnchor = '';
+  public isMobile = window.innerWidth < 767;
+
+  handleChange(link: string): void {
+    this.activeAnchor = link;
+  }
+}

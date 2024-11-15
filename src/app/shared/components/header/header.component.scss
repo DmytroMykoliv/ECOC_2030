@@ -35,6 +35,10 @@
     width: 100%;
   }
 
+  &__lang {
+    z-index: 11;
+  }
+
   @media (max-width: 1024px) {
     &__main {
       &-logo {
@@ -48,6 +52,12 @@
       &-logo {
         width: 40%;
       }
+    }
+  }
+
+  @media (max-width: 580px) {
+    &__main {
+      padding-left: 36px;
     }
   }
 }
