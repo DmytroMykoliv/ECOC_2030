@@ -20,5 +20,6 @@
   "btn.save": "Save",
   "btn.add_new": "Add new",
   "btn.read_more": "Read more",
+  "btn.load_more": "Load more",
   "validator.required": "Required"
 }

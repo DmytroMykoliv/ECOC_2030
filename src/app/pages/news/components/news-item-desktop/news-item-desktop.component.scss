@@ -1,0 +1,33 @@
+.desktop {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  row-gap: 2rem;
+  padding-bottom: 3rem;
+  margin-top: 3.5rem;
+
+  &__content {
+    grid-column: span 5 / span 5;
+  }
+
+  &__title {
+    margin-bottom: 0.5rem;
+  }
+
+  &__date {
+    color: var(--primary-yellow);
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  &__desc {
+    margin-bottom: 1rem;
+  }
+
+  &__img-wrap {
+    grid-column: span 7 / span 7;
+  }
+
+  @media (min-width: 768px) {
+    column-gap: 2rem;
+  }
+}

@@ -1,0 +1,28 @@
+<div class="desktop">
+  <div class="desktop__content">
+    <h2 class="desktop__title">
+      {{ article().title }}
+    </h2>
+    <span class="desktop__date">
+      {{ article().created_at | date : "fullDate" }}
+    </span>
+    <p class="desktop__desc">
+      {{ article().description }}
+    </p>
+
+    <div class="news__more">
+      <button
+        nz-button
+        nzShape="round"
+        routerLink="{{ '/news/' + article().ref }}"
+        class="news__more-btn"
+      >
+        {{ "btn.read_more" | translate }}
+      </button>
+    </div>
+  </div>
+
+  <div class="desktop__img-wrap">
+    <img [src]="article().img_url" class="desktop__img" />
+  </div>
+</div>

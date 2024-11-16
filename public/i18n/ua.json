@@ -20,5 +20,6 @@
   "btn.save": "Зберегти",
   "btn.add_new": "Додати новину",
   "btn.read_more": "Читати більше",
+  "btn.load_more": "Завантажити більше",
   "validator.required": "Обов'язково"
 }

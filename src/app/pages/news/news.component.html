@@ -11,13 +11,37 @@
 
   <hr />
 
-  <nz-spin [nzSpinning]="isLoading()">
-    <div class="news__list page__section">
-      @for (article of news; track article.id) {
-      <div class="news__col">
-        <app-news-item [article]="article" />
+  <section class="page__section">
+    <nz-spin [nzSpinning]="isLoading()">
+      @if (!isTablet) {
+      <div class="news__list">
+        @for (article of newsToShow; track article.id) {
+        <app-news-item-desktop [article]="article" />
+        <hr />
+        }
+      </div>
+      } @else {
+      <div class="news__tablet">
+        @for (article of newsToShow; track article.id) {
+        <div class="news__col">
+          <app-news-item [article]="article" />
+        </div>
+        }
       </div>
       }
+    </nz-spin>
+
+    @if (news.length !== newsToShow.length) {
+    <div class="news__load-more">
+      <button
+        nz-button
+        nzShape="round"
+        class="news__load-btn"
+        (click)="loadMore()"
+      >
+        {{ "btn.load_more" | translate }}
+      </button>
     </div>
-  </nz-spin>
+    }
+  </section>
 </main>

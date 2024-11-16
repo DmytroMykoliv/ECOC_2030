@@ -3,7 +3,7 @@
 }
 
 .news {
-  &__list {
+  &__tablet {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     row-gap: 2rem;
@@ -15,13 +15,26 @@
     border: 1px solid #fff;
   }
 
+  &__load-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
   @media (min-width: 768px) {
-    &__list {
+    &__tablet {
       column-gap: 2rem;
     }
 
     &__col {
       grid-column: span 6 / span 6;
+    }
+
+    &__load-btn {
+      min-width: 160px;
+      height: 40px;
+      font-size: 18px;
     }
   }
 }
