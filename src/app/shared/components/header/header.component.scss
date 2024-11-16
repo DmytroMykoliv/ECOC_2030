@@ -53,11 +53,24 @@
         width: 40%;
       }
     }
+
+    &__bg-up {
+      width: 50px;
+      bottom: 0;
+    }
   }
 
   @media (max-width: 580px) {
     &__main {
       padding-left: 36px;
     }
+  }
+}
+
+.triangle__up {
+  bottom: 50px;
+
+  @media (max-width: 767px) {
+    bottom: 0;
   }
 }

@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
-import { BackToTopComponent, FooterComponent } from '@shared/components';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { BackToTopComponent, ELang, FooterComponent } from '@shared/components';
 
 @Component({
   selector: 'app-root',
@@ -19,5 +19,11 @@ import { BackToTopComponent, FooterComponent } from '@shared/components';
   `,
 })
 export class AppComponent {
-  title = 'ECOC_2030';
+  private translate = inject(TranslateService);
+
+  public currentLang = localStorage.getItem('ecoc_lang') || ELang.en;
+  constructor() {
+    this.translate.setDefaultLang(ELang.en);
+    this.translate.use(this.currentLang);
+  }
 }

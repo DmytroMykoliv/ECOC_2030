@@ -2,24 +2,30 @@
   <app-header-menu [isHomePage]="false" [isLangVisible]="true" />
 </header>
 
-<main class="page lviv-2030 container">
+<main class="page lviv-2030">
   <section class="page__section page__head">
-    <h1 class="page__title">
-      {{ "title.lviv_2030" | translate }}
-    </h1>
+    <div class="container">
+      <h1 class="page__title">
+        {{ "title.lviv_2030" | translate }}
+      </h1>
+    </div>
   </section>
 
-  <hr />
+  <section class="page__section">
+    <div class="container">
+      <app-grid-section />
+    </div>
+  </section>
 
   <section class="page__section">
-    <app-grid-section />
+    <div class="container">
+      <app-grid-section />
+    </div>
   </section>
-  <hr />
+
   <section class="page__section">
-    <app-grid-section />
-  </section>
-  <hr />
-  <section class="page__section">
-    <app-grid-section />
+    <div class="container">
+      <app-grid-section />
+    </div>
   </section>
 </main>

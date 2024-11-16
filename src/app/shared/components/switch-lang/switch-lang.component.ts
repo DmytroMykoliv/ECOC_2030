@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 
-enum ELang {
+export enum ELang {
   en = 'en',
   ua = 'ua',
 }
@@ -24,8 +24,6 @@ export class SwitchLangComponent {
   public langMenu = [this.en, this.ua];
 
   constructor() {
-    this.translate.setDefaultLang(ELang.en);
-    this.translate.use(this.currentLang);
     this.langMenu = this.langMenu.filter((l) => l !== this.currentLang);
   }
 

@@ -4,11 +4,18 @@ import { TranslateModule } from '@ngx-translate/core';
 import { BurgerMenuComponent } from '../burger-menu/burger-menu.component';
 
 import { NzAffixModule } from 'ng-zorro-antd/affix';
+import { SwitchLangComponent } from '../switch-lang/switch-lang.component';
 
 @Component({
   selector: 'app-header-menu',
   standalone: true,
-  imports: [RouterModule, TranslateModule, BurgerMenuComponent, NzAffixModule],
+  imports: [
+    RouterModule,
+    TranslateModule,
+    SwitchLangComponent,
+    BurgerMenuComponent,
+    NzAffixModule,
+  ],
   templateUrl: './header-menu.component.html',
   styleUrl: './header-menu.component.scss',
 })

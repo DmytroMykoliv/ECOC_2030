@@ -10,6 +10,7 @@ html {
   --gray-700: oklch(36.98% 0.014 302.71);
 
   --pill-accent: var(--bright-blue);
+  --triangleWidth: 66px;
 
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -102,5 +103,23 @@ video {
 
   @media (max-width: 580px) {
     padding: 0 20px;
+  }
+}
+
+.triangle {
+  &__down,
+  &__up {
+    position: absolute;
+    width: var(--triangleWidth);
+  }
+
+  &__down {
+    right: 0;
+    top: 0;
+  }
+
+  &__up {
+    left: 0;
+    bottom: 0;
   }
 }

@@ -34,6 +34,9 @@
         <li class="drawer__item">
           <a routerLink="/news">{{ "nav.news" | translate }}</a>
         </li>
+        <li class="drawer__item" (click)="scrollToId('partners_section')">
+          <a>{{ "nav.partners" | translate }}</a>
+        </li>
         <li class="drawer__item" (click)="scrollToId('contacts_section')">
           <a>{{ "nav.contacts" | translate }}</a>
         </li>

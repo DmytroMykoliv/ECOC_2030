@@ -1,14 +1,18 @@
 <app-header />
 
 <main class="home">
-  <div class="container">
-    <section class="home__content home__ecoc" id="ecoc_section">
-      <app-ecoc [content]="{ title: 'title.ecoc' }" />
-    </section>
+  <section class="home__content home__ecoc container" id="ecoc_section">
+    <app-ecoc [content]="{ title: 'title.ecoc' }" />
+  </section>
 
-    <hr />
+  <hr />
 
-    <section class="home__content home__prehistory" id="prehistory_section" #prehistory_section>
+  <section class="home__content home__prehistory" id="prehistory_section">
+    <div class="triangle__down">
+      <img src="/images/icons/down.svg" alt="down image" />
+    </div>
+
+    <div class="container home__prehistory-content">
       <aside class="home__anchor">
         <nz-anchor
           class="home__anchor-menu"
@@ -259,18 +263,28 @@
           </li>
         </ul>
       </aside>
-    </section>
+    </div>
+  </section>
 
-    <hr />
+  <hr />
 
-    <section class="home__content home__news" id="news_list_section">
-      <app-news-list />
-    </section>
+  <section class="home__content home__news" id="news_list_section">
+    <app-news-list />
+  </section>
 
-    <hr />
+  <hr />
 
-    <section class="home__content home__contacts" id="contacts_section">
-      <app-contacts />
-    </section>
-  </div>
+  <section class="home__content home__contacts" id="partners_section">
+    <div class="triangle__down">
+      <img src="/images/icons/down.svg" alt="down image" />
+    </div>
+
+    <app-partners />
+  </section>
+
+  <hr />
+
+  <section class="home__content home__contacts" id="contacts_section">
+    <app-contacts />
+  </section>
 </main>

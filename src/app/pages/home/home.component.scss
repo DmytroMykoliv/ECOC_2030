@@ -1,9 +1,16 @@
 .home {
+  position: relative;
+
   &__content {
     position: relative;
-    display: flex;
-    gap: 150px;
     padding: 6rem 0px;
+  }
+
+  &__prehistory {
+    &-content {
+      display: flex;
+      gap: 150px;
+    }
   }
 
   &__anchor {
@@ -110,4 +117,8 @@
       }
     }
   }
+}
+
+hr {
+  margin: 0;
 }

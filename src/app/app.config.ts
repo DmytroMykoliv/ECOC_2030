@@ -30,16 +30,6 @@ const httpLoaderFactory = (http: HttpClient) =>
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(
-      routes,
-      withEnabledBlockingInitialNavigation(),
-      withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })
-    ),
-    provideFirebaseApp(() => initializeApp(firebaseConfig)),
-    provideFirestore(() => getFirestore()),
-    provideNzI18n(uk_UA),
-    importProvidersFrom(FormsModule),
-    provideAnimationsAsync(),
     provideHttpClient(),
     importProvidersFrom([
       TranslateModule.forRoot({
@@ -50,5 +40,15 @@ export const appConfig: ApplicationConfig = {
         },
       }),
     ]),
+    provideRouter(
+      routes,
+      withEnabledBlockingInitialNavigation(),
+      withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })
+    ),
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideFirestore(() => getFirestore()),
+    provideNzI18n(uk_UA),
+    importProvidersFrom(FormsModule),
+    provideAnimationsAsync(),
   ],
 };

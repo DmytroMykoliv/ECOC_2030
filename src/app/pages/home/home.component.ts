@@ -5,6 +5,7 @@ import {
   ContactsComponent,
   EcocComponent,
   NewsListComponent,
+  PartnersComponent,
 } from './components';
 import { HeaderComponent } from '@shared/components';
 import { DatePipe } from '@angular/common';
@@ -18,6 +19,7 @@ import { DatePipe } from '@angular/common';
     EcocComponent,
     NzAnchorModule,
     NewsListComponent,
+    PartnersComponent,
     ContactsComponent,
     DatePipe,
   ],

@@ -1,0 +1,15 @@
+<div class="article">
+  <a routerLink="{{ '/news/' + article().ref }}" class="article__link">
+    <div class="article__link-wrap-img">
+      <img [src]="article().img_url" class="article__link-img" />
+    </div>
+    <div class="article__content">
+      <span class="article__date">
+        {{ article().created_at | date : "fullDate" }}
+      </span>
+      <h3 class="article__title">
+        {{ article().title }}
+      </h3>
+    </div>
+  </a>
+</div>

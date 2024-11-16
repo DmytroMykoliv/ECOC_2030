@@ -29,6 +29,9 @@
             <a>{{ "nav.news" | translate }}</a>
           </li>
           }
+          <li class="header-nav__item" (click)="scrollTo('partners_section')">
+            <a>{{ "nav.partners" | translate }}</a>
+          </li>
           <li class="header-nav__item" (click)="scrollTo('contacts_section')">
             <a>{{ "nav.contacts" | translate }}</a>
           </li>
@@ -36,6 +39,10 @@
       </nav>
       } @else {
       <app-burger-menu [isHomePage]="isLangVisible()" />
+      } @if (isLangVisible()) {
+      <div class="header-nav__lang">
+        <app-switch-lang />
+      </div>
       }
     </div>
   </div>
