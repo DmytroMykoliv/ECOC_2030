@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  DestroyRef,
   inject,
   OnInit,
   signal,
@@ -16,6 +17,7 @@ import { NewsFirebaseService } from '@shared/services';
 import { INews } from '@shared/interfaces';
 import { RouterModule } from '@angular/router';
 import { NewsItemComponent, NewsItemDesktopComponent } from './components';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-news',
@@ -35,6 +37,7 @@ import { NewsItemComponent, NewsItemDesktopComponent } from './components';
 })
 export class NewsComponent implements OnInit {
   private _cdr = inject(ChangeDetectorRef);
+  private destroyRef = inject(DestroyRef);
   private _newsFirebase = inject(NewsFirebaseService);
 
   public news: INews[] = [];
@@ -49,15 +52,20 @@ export class NewsComponent implements OnInit {
   private _getNews() {
     this.isLoading.set(true);
 
-    this._newsFirebase.getNews().subscribe({
-      next: (response) => {
-        this.news = response;
-        this.newsToShow = response.slice(0, 2);
-        this.isLoading.set(false);
+    this._newsFirebase
+      .getNews()
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (response) => {
+          this.news = response.filter((a) => a.status === 'published');
+          this.newsToShow = response
+            .filter((a) => a.status === 'published')
+            .slice(0, 2);
+          this.isLoading.set(false);
 
-        this._cdr.markForCheck();
-      },
-    });
+          this._cdr.markForCheck();
+        },
+      });
   }
 
   public loadMore() {

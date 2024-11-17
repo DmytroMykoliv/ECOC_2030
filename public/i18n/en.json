@@ -18,8 +18,10 @@
   "title.ecoc": "European Capital Of Culture",
   "title.lviv_2030": "Lviv 2030",
   "btn.cancel": "Cancel",
+  "btn.publish": "Publish",
   "btn.save": "Save",
   "btn.add_new": "Add new",
+  "btn.logout": "Logout",
   "btn.read_more": "Read more",
   "btn.load_more": "Load more",
   "validator.required": "Required"

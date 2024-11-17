@@ -30,6 +30,19 @@
     </nz-form-control>
   </nz-form-item>
 
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="content" nzRequired>
+      Content
+    </nz-form-label>
+    <nz-form-control nzErrorTip="{{ 'validator.required' | translate }}">
+      <app-editor
+        [data]="news?.content || ''"
+        (addFormControl)="addFormControl('content', $event)"
+        name="content"
+      ></app-editor>
+    </nz-form-control>
+  </nz-form-item>
+
   <div class="form__footer">
     <button nz-button nzShape="round" (click)="destroy()">
       {{ "btn.cancel" | translate }}
@@ -39,7 +52,16 @@
       nzType="primary"
       nzShape="round"
       [nzLoading]="isLoading"
-      (click)="submit()"
+      (click)="submit('published')"
+    >
+      {{ "btn.publish" | translate }}
+    </button>
+    <button
+      nz-button
+      nzType="primary"
+      nzShape="round"
+      [nzLoading]="isLoading"
+      (click)="submit('draft')"
     >
       {{ "btn.save" | translate }}
     </button>

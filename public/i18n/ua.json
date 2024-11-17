@@ -18,8 +18,10 @@
   "title.lviv_2030": "Львів 2030",
   "title.ecoc": "Європейська Столиця Культури",
   "btn.cancel": "Відміна",
+  "btn.publish": "Опублікувати",
   "btn.save": "Зберегти",
   "btn.add_new": "Додати новину",
+  "btn.logout": "Вийти",
   "btn.read_more": "Читати більше",
   "btn.load_more": "Завантажити більше",
   "validator.required": "Обов'язково"

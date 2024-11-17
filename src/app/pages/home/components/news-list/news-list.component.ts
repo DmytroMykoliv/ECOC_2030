@@ -2,10 +2,12 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  DestroyRef,
   inject,
   input,
   signal,
 } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { INews } from '@shared/interfaces';
@@ -24,6 +26,7 @@ import { NewsItemComponent } from 'src/app/pages/news/components';
 export class NewsListComponent {
   public title = input('title.news');
   private _cdr = inject(ChangeDetectorRef);
+  private destroyRef = inject(DestroyRef);
   private _newsFirebase = inject(NewsFirebaseService);
 
   public news: INews[] = [];
@@ -36,13 +39,18 @@ export class NewsListComponent {
   private _getNews() {
     this.isLoading.set(true);
 
-    this._newsFirebase.getNews().subscribe({
-      next: (response) => {
-        this.news = response.slice(0, 2);
-        this.isLoading.set(false);
+    this._newsFirebase
+      .getNews()
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (response) => {
+          this.news = response
+            .filter((a) => a.status === 'published')
+            .slice(0, 2);
+          this.isLoading.set(false);
 
-        this._cdr.markForCheck();
-      },
-    });
+          this._cdr.markForCheck();
+        },
+      });
   }
 }

@@ -1,0 +1,7 @@
+.editor-container {
+  &__editor {
+    &.required {
+      border: 1px solid red;
+    }
+  }
+}

@@ -30,6 +30,7 @@ export class AddNewsComponent {
       nzTitle: '',
       nzContent: AddNewsModalComponent,
       nzData: data,
+      nzClosable: false,
       nzWidth: '80%',
       nzOnOk: () => new Promise((resolve) => setTimeout(resolve, 1000)),
       nzFooter: null,

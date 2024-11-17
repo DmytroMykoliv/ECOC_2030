@@ -7,4 +7,5 @@ export interface INews {
   img_url: string;
   ref: string;
   title: string;
+  status: 'draft' | 'published';
 }

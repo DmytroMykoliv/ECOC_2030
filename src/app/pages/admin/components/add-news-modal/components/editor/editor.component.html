@@ -1,0 +1,18 @@
+<div class="editor">
+  <form
+    class="editor-container editor-container_classic-editor editor-container_include-style"
+    #editorContainerElement
+    [formGroup]="form"
+  >
+    <div
+      class="editor-container__editor"
+      [class.required]="text?.hasError('required') && form.dirty"
+    >
+      <div #editorElement>
+        @if (isLayoutReady()) {
+        <ckeditor [editor]="Editor" [config]="config" formControlName="text" />
+        }
+      </div>
+    </div>
+  </form>
+</div>

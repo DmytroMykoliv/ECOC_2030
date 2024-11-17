@@ -36,12 +36,12 @@ export class NewsFirebaseService {
     return from(promise);
   }
 
-  public addNews(body: INews) {
+  public addNews(body: Omit<INews, 'id'>) {
     const promise = addDoc(this.newsCollections, body);
     return from(promise);
   }
 
-  public update(id: string, body: INews): Observable<void> {
+  public update(id: string, body: Omit<INews, 'id'>): Observable<void> {
     const docRef = doc(this.firestore, 'news/' + id);
     const promise = setDoc(docRef, body);
     return from(promise);

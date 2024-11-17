@@ -13,6 +13,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NewsFirebaseService } from '@shared/services';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { EditorComponent } from './components';
 
 @Component({
   selector: 'app-add-news-modal',
@@ -20,6 +21,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   imports: [
     TranslateModule,
     ReactiveFormsModule,
+    EditorComponent,
     NzFormModule,
     NzInputModule,
     NzButtonModule,
@@ -46,12 +48,22 @@ export class AddNewsModalComponent implements OnInit {
     });
   }
 
-  public submit() {
+  public addFormControl(name: string, control: FormGroup) {
+    this.form.addControl(name, control);
+  }
+
+  public submit(status: 'draft' | 'published') {
     if (this.form.valid) {
       this.isLoading = true;
 
-      const body: INews = {
-        ...this.form.value,
+      const { title, img_url, description, content } = this.form.value;
+
+      const body: Omit<INews, 'id'> = {
+        title,
+        img_url,
+        description,
+        content: content.text,
+        status,
         ref:
           this.news?.ref ||
           this.form.value.title.trim().replace(/[^\w\d]/g, '-'),
@@ -74,26 +86,26 @@ export class AddNewsModalComponent implements OnInit {
     }
   }
 
-  private addNews(body: INews) {
+  private addNews(body: Omit<INews, 'id'>) {
     this._newsFirebase
       .addNews(body)
       .pipe(takeUntilDestroyed(this._destroyRef))
       .subscribe({
         next: () => {
           this.isLoading = false;
-          this.destroy(body);
+          this.destroy({ ...body, id: '' });
         },
       });
   }
 
-  private update(body: INews) {
+  private update(body: Omit<INews, 'id'>) {
     this._newsFirebase
       .update(this.news!.id, body)
       .pipe(takeUntilDestroyed(this._destroyRef))
       .subscribe({
         next: () => {
           this.isLoading = false;
-          this.destroy(body);
+          this.destroy({ ...body, id: this.news!.id });
         },
       });
   }
