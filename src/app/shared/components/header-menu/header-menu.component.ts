@@ -26,16 +26,16 @@ export class HeaderMenuComponent {
 
   public isMobile = window.innerWidth < 767;
 
-  public scrollTo(id: string) {
+  public scrollTo(id: string, offset = 55) {
     if (this.isLangVisible()) {
       this.router.navigate(['/']).then(() => {
         setTimeout(() => {
-          this._scroll(id, 55);
-        }, 0);
+          this._scroll(id, offset);
+        }, 350);
       });
       return;
     }
-    this._scroll(id, 55);
+    this._scroll(id, offset);
   }
 
   private _scroll(id: string, offset: number = 0) {

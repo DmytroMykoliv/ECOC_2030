@@ -6,7 +6,10 @@ import {
   deleteDoc,
   doc,
   Firestore,
+  getDocs,
+  query,
   setDoc,
+  where,
 } from '@angular/fire/firestore';
 import { INews } from '@shared/interfaces';
 import { from, Observable } from 'rxjs';
@@ -22,6 +25,15 @@ export class NewsFirebaseService {
     return collectionData(this.newsCollections, {
       idField: 'id',
     }) as Observable<INews[]>;
+  }
+
+  public getNewsByRef(field: string, value: string) {
+    const newsCollection = collection(this.firestore, 'news');
+    const q = query(newsCollection, where(field, '==', value));
+
+    const promise = getDocs(q);
+
+    return from(promise);
   }
 
   public addNews(body: INews) {

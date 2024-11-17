@@ -1,1 +1,41 @@
-<article>news-detail works!</article>
+<header class="header__menu">
+  <app-header-menu [isHomePage]="false" [isLangVisible]="true" />
+</header>
+
+<main class="article lviv-2030">
+  <nz-spin [nzSpinning]="isLoading()">
+    <section class="article__section">
+      <div class="container article__head">
+        <div class="article__head-info">
+          <h1 class="article__title">
+            {{ article?.title }}
+          </h1>
+          <span class="article__date">
+            {{ article?.created_at | date : "fullDate" }}
+          </span>
+          <p class="article__desc">
+            {{ article?.description }}
+          </p>
+        </div>
+
+        <div class="article__head-img">
+          <img
+            class="article__img"
+            [src]="article?.img_url"
+            alt="article image"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="article__section">
+      <div class="container">
+        {{ article?.content }}
+      </div>
+    </section>
+  </nz-spin>
+
+  <section class="article__section">
+    <app-news-list title="title.you_may_like" />
+  </section>
+</main>

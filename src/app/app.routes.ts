@@ -19,7 +19,7 @@ export const routes: Routes = [
       import('./pages/news/news.routes').then((m) => m.NEWS_ROUTES),
   },
   {
-    path: 'news/:id',
+    path: 'news/:ref',
     loadChildren: () =>
       import('./pages/news-detail/news-detail.routes').then(
         (m) => m.NEWS_DETAIL_ROUTES

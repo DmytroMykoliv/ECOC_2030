@@ -14,4 +14,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 })
 export class NewsItemDesktopComponent {
   public article = input.required<INews>();
+
+  public setArticle(id: string) {
+    localStorage.setItem('ecoc_article_id', id);
+  }
 }

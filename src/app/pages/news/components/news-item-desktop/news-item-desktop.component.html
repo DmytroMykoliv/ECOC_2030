@@ -15,6 +15,7 @@
         nz-button
         nzShape="round"
         routerLink="{{ '/news/' + article().ref }}"
+        (click)="setArticle(article().id)"
         class="news__more-btn"
       >
         {{ "btn.read_more" | translate }}

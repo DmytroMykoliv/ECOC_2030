@@ -3,6 +3,7 @@ import {
   ChangeDetectorRef,
   Component,
   inject,
+  input,
   signal,
 } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -21,6 +22,7 @@ import { NewsItemComponent } from 'src/app/pages/news/components';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NewsListComponent {
+  public title = input('title.news');
   private _cdr = inject(ChangeDetectorRef);
   private _newsFirebase = inject(NewsFirebaseService);
 

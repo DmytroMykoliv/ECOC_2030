@@ -3,7 +3,8 @@
 
   &__content {
     position: relative;
-    padding: 6rem 0px;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 
   &__prehistory {
@@ -87,7 +88,8 @@
 
   @media (max-width: 767px) {
     &__content {
-      padding: 3rem 0px;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
     }
 
     &__prehistory {

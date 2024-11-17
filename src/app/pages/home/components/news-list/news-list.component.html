@@ -1,5 +1,5 @@
 <div class="container news">
-  <h2 class="news__title">{{ "title.news" | translate }}</h2>
+  <h2 class="news__title">{{ title() | translate }}</h2>
 
   <div class="news__list">
     @for (article of news; track article.id) {

@@ -12,4 +12,8 @@ import { INews } from '@shared/interfaces';
 })
 export class NewsItemComponent {
   public article = input.required<INews>();
+
+  public setArticle(id: string) {
+    localStorage.setItem('ecoc_article_id', id);
+  }
 }

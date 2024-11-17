@@ -22,7 +22,7 @@
 
     <nav class="drawer">
       <ul class="drawer__list">
-        <li class="drawer__item" (click)="scrollToId('ecoc_section')">
+        <li class="drawer__item" (click)="scrollToId('ecoc_section', 0)">
           <a>{{ "nav.ecoc" | translate }}</a>
         </li>
         <li class="drawer__item">
@@ -31,13 +31,21 @@
         <li class="drawer__item" (click)="scrollToId('anchor_ecoc_2016')">
           <a>{{ "nav.prehistory" | translate }}</a>
         </li>
+
+        @if (!isHomePage()) {
         <li class="drawer__item">
           <a routerLink="/news">{{ "nav.news" | translate }}</a>
         </li>
+        } @else {
+        <li class="drawer__item" (click)="scrollToId('news_list_section', 0)">
+          <a>{{ "nav.news" | translate }}</a>
+        </li>
+        }
+
         <li class="drawer__item" (click)="scrollToId('partners_section')">
           <a>{{ "nav.partners" | translate }}</a>
         </li>
-        <li class="drawer__item" (click)="scrollToId('contacts_section')">
+        <li class="drawer__item" (click)="scrollToId('contacts_section', 0)">
           <a>{{ "nav.contacts" | translate }}</a>
         </li>
       </ul>

@@ -1,5 +1,26 @@
 <div class="partners">
   <div class="container">
-    <app-grid-section [content]="content" />
+    <h2 class="partners__title">{{ "nav.partners" | translate }}</h2>
+  </div>
+
+  <div class="container carousel-wrapper">
+    <nz-carousel
+      [nzEffect]="effect"
+      class="carousel"
+      [nzAutoPlay]="false"
+      [nzAutoPlaySpeed]="6000"
+    >
+      @for (slide of partners; track $index) {
+      <div nz-carousel-content>
+        <div class="carousel__slide">
+          @if (!isMobile) { @for (item of slide.items; track $index) {
+          <h3 class="carousel__title">{{ item }}</h3>
+          } } @else {
+          <h3 class="carousel__title">{{ slide }}</h3>
+          }
+        </div>
+      </div>
+      }
+    </nz-carousel>
   </div>
 </div>

@@ -15,6 +15,10 @@ html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 580px) {
+    --triangleWidth: 45px;
+  }
 }
 
 html,

@@ -16,7 +16,7 @@ import { SwitchLangComponent } from '../switch-lang/switch-lang.component';
     NzButtonModule,
     NzDrawerModule,
     NzIconModule,
-    SwitchLangComponent
+    SwitchLangComponent,
   ],
   templateUrl: './burger-menu.component.html',
   styleUrl: './burger-menu.component.scss',
@@ -37,19 +37,20 @@ export class BurgerMenuComponent {
   }
 
   public scrollToId(id: string, offset = 60) {
-    this.close();
-
-    if (this.isHomePage()) {
+    if (!this.isHomePage()) {
       this.router.navigate(['/']).then(() => {
         setTimeout(() => {
           this._scroll(id, offset);
-        }, 0);
+        }, 350);
       });
       return;
     }
+
     setTimeout(() => {
       this._scroll(id, offset);
     }, 350);
+
+    this.close();
   }
 
   private _scroll(id: string, offset: number = 0) {

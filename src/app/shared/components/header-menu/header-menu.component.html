@@ -11,7 +11,7 @@
             </a>
           </li>
           }
-          <li class="header-nav__item" (click)="scrollTo('ecoc_section')">
+          <li class="header-nav__item" (click)="scrollTo('ecoc_section', 0)">
             <a>{{ "nav.ecoc" | translate }}</a>
           </li>
           <li class="header-nav__item">
@@ -25,7 +25,10 @@
             <a routerLink="/news">{{ "nav.news" | translate }}</a>
           </li>
           } @else {
-          <li class="header-nav__item" (click)="scrollTo('news_list_section')">
+          <li
+            class="header-nav__item"
+            (click)="scrollTo('news_list_section', 0)"
+          >
             <a>{{ "nav.news" | translate }}</a>
           </li>
           }
@@ -38,8 +41,8 @@
         </ul>
       </nav>
       } @else {
-      <app-burger-menu [isHomePage]="isLangVisible()" />
-      } @if (isLangVisible()) {
+      <app-burger-menu [isHomePage]="isHomePage()" />
+      } @if (isLangVisible() && !isMobile) {
       <div class="header-nav__lang">
         <app-switch-lang />
       </div>

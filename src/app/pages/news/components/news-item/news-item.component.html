@@ -1,5 +1,9 @@
 <div class="article">
-  <a routerLink="{{ '/news/' + article().ref }}" class="article__link">
+  <a
+    routerLink="{{ '/news/' + article().ref }}"
+    class="article__link"
+    (click)="setArticle(article().id)"
+  >
     <div class="article__link-wrap-img">
       <img [src]="article().img_url" class="article__link-img" />
     </div>
