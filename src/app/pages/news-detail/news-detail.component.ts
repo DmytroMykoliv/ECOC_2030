@@ -29,7 +29,7 @@ import { NewsListComponent } from '../home/components';
   ],
   templateUrl: './news-detail.component.html',
   styleUrl: './news-detail.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NewsDetailComponent implements OnInit {
   private _router = inject(Router);
@@ -58,7 +58,7 @@ export class NewsDetailComponent implements OnInit {
         if (!response.empty) {
           this.article = response.docs[0].data() as INews;
         } else {
-          this._router.navigate(['news'])
+          this._router.navigate(['news']);
         }
 
         this.isLoading.set(false);

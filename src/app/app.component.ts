@@ -23,6 +23,8 @@ export class AppComponent {
 
   public currentLang = localStorage.getItem('ecoc_lang') || ELang.en;
   constructor() {
+    console.log('currentLang', this.currentLang);
+
     this.translate.setDefaultLang(ELang.en);
     this.translate.use(this.currentLang);
   }

@@ -22,6 +22,10 @@
     }
   }
 
+  &__img {
+    object-fit: contain;
+  }
+
   &__date {
     display: block;
     margin-bottom: 10px;

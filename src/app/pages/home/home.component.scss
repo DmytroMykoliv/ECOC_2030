@@ -57,6 +57,12 @@
       }
     }
 
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
     &-date {
       margin-bottom: 1rem;
     }
