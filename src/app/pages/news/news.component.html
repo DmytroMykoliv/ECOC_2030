@@ -16,7 +16,7 @@
       @if (!isTablet) {
       <div class="news__list">
         @for (article of newsToShow; track article.id) {
-        <app-news-item-desktop [article]="article" />
+        <app-news-item-desktop [article]="article" [dateLang]="dateLang()" />
         <hr />
         }
       </div>
@@ -24,7 +24,7 @@
       <div class="news__tablet">
         @for (article of newsToShow; track article.id) {
         <div class="news__col">
-          <app-news-item [article]="article" />
+          <app-news-item [article]="article" [dateLang]="dateLang()" />
         </div>
         }
       </div>

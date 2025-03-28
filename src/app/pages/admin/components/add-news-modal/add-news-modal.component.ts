@@ -44,7 +44,6 @@ export class AddNewsModalComponent implements OnInit {
     this.form = this._fb.group({
       img_url: [this.news?.img_url || '', [Validators.required]],
       title: [this.news?.title || '', [Validators.required]],
-      description: [this.news?.description || '', [Validators.required]],
     });
   }
 
@@ -61,7 +60,7 @@ export class AddNewsModalComponent implements OnInit {
       const body: Omit<INews, 'id'> = {
         title,
         img_url,
-        description,
+        description: description.text,
         content: content.text,
         status,
         ref:

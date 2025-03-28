@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, DestroyRef, inject, signal } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NzAnchorModule } from 'ng-zorro-antd/anchor';
 import {
@@ -10,6 +10,7 @@ import {
 import { ELang, HeaderComponent } from '@shared/components';
 import { DatePipe } from '@angular/common';
 import { IPrehistory, prehistory } from './constants';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-home',
@@ -29,6 +30,7 @@ import { IPrehistory, prehistory } from './constants';
 })
 export class HomeComponent {
   private _translate = inject(TranslateService);
+  private destroyRef = inject(DestroyRef);
 
   public prehistory = prehistory;
   public activeAnchor = '';
@@ -44,12 +46,13 @@ export class HomeComponent {
   });
 
   constructor() {
-    this._translate.onLangChange.subscribe({
-      next: (resp: { lang: 'en' | 'ua' }) => {
-        this.lang.set(resp.lang);
-        console.log('lang', resp);
-      },
-    });
+    this._translate.onLangChange
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (resp) => {
+          this.lang.set(resp.lang as keyof IPrehistory);
+        },
+      });
   }
 
   handleChange(link: string): void {

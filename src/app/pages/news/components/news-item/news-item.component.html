@@ -9,7 +9,7 @@
     </div>
     <div class="article__content">
       <span class="article__date">
-        {{ article().created_at | date : "fullDate" }}
+        {{ article().created_at | date : "fullDate" : undefined : dateLang() }}
       </span>
       <h3 class="article__title">
         {{ article().title }}

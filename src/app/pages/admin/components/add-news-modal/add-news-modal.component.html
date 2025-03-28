@@ -20,13 +20,11 @@
       Description
     </nz-form-label>
     <nz-form-control nzErrorTip="{{ 'validator.required' | translate }}">
-      <textarea
-        nz-input
-        formControlName="description"
-        placeholder="Description"
-        name="description"
-        [nzAutosize]="{ minRows: 3, maxRows: 5 }"
-      ></textarea>
+      <app-editor
+        [data]="news?.description || ''"
+        (addFormControl)="addFormControl('description', $event)"
+        name="content"
+      ></app-editor>
     </nz-form-control>
   </nz-form-item>
 

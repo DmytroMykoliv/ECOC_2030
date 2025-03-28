@@ -11,11 +11,11 @@
             {{ article?.title }}
           </h1>
           <span class="article__date">
-            {{ article?.created_at | date : "fullDate" }}
+            {{
+              article?.created_at | date : "fullDate" : undefined : dateLang()
+            }}
           </span>
-          <p class="article__desc">
-            {{ article?.description }}
-          </p>
+          <p class="article__desc" [innerHTML]="article?.description"></p>
         </div>
 
         <div class="article__head-img">
@@ -29,9 +29,10 @@
     </section>
 
     <section class="article__section">
-      <div class="container">
-        {{ article?.content }}
-      </div>
+      <div
+        class="container article__content"
+        [innerHTML]="article?.content"
+      ></div>
     </section>
   </nz-spin>
 

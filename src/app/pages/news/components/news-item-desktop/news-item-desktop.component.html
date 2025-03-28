@@ -4,11 +4,9 @@
       {{ article().title }}
     </h2>
     <span class="desktop__date">
-      {{ article().created_at | date : "fullDate" }}
+      {{ article().created_at | date : "fullDate" : undefined : dateLang() }}
     </span>
-    <p class="desktop__desc">
-      {{ article().description }}
-    </p>
+    <p class="desktop__desc" [innerHTML]="article().description"></p>
 
     <div class="news__more">
       <button
