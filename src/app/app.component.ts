@@ -2,8 +2,7 @@ import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { BackToTopComponent, ELang, FooterComponent } from '@shared/components';
-import localeUa from '@angular/common/locales/uk';
-import { registerLocaleData } from '@angular/common';
+import { ECOC_LANG } from '@shared/constants';
 
 @Component({
   selector: 'app-root',
@@ -23,10 +22,9 @@ import { registerLocaleData } from '@angular/common';
 export class AppComponent {
   private translate = inject(TranslateService);
 
-  public currentLang = localStorage.getItem('ecoc_lang') || ELang.en;
+  public currentLang = localStorage.getItem(ECOC_LANG) || ELang.en;
   constructor() {
     this.translate.setDefaultLang(ELang.en);
     this.translate.use(this.currentLang);
-    registerLocaleData(localeUa, 'uk');
   }
 }

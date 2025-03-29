@@ -24,5 +24,6 @@
   "btn.logout": "Вийти",
   "btn.read_more": "Читати більше",
   "btn.load_more": "Завантажити більше",
+  "form.label.img_url": "URL-адреса зображення",
   "validator.required": "Обов'язково"
 }

@@ -78,8 +78,8 @@ export class NewsComponent implements OnInit {
           this.newsToShow = response
             .filter((a) => a.status === 'published')
             .slice(0, 2);
-          this.isLoading.set(false);
 
+          this.isLoading.set(false);
           this._cdr.markForCheck();
         },
       });

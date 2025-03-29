@@ -23,7 +23,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { firebaseConfig } from './firebase.config';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 
-registerLocaleData(uk);
+registerLocaleData(uk, 'uk');
 
 const httpLoaderFactory = (http: HttpClient) =>
   new TranslateHttpLoader(http, './i18n/', '.json');

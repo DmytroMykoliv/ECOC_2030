@@ -24,5 +24,6 @@
   "btn.logout": "Logout",
   "btn.read_more": "Read more",
   "btn.load_more": "Load more",
+  "form.label.img_url": "Image URL",
   "validator.required": "Required"
 }

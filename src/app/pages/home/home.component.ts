@@ -11,6 +11,7 @@ import { ELang, HeaderComponent } from '@shared/components';
 import { DatePipe } from '@angular/common';
 import { IPrehistory, prehistory } from './constants';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ECOC_LANG } from '@shared/constants';
 
 @Component({
   selector: 'app-home',
@@ -36,8 +37,7 @@ export class HomeComponent {
   public activeAnchor = '';
   public isMobile = window.innerWidth < 767;
 
-  private _ecoc_lang = 'ecoc_lang';
-  public currentLang = (localStorage.getItem(this._ecoc_lang) ||
+  public currentLang = (localStorage.getItem(ECOC_LANG) ||
     ELang.en) as keyof IPrehistory;
   public lang = signal<keyof IPrehistory>(this.currentLang);
 

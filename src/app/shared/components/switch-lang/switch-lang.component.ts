@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { ECOC_LANG } from '@shared/constants';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 
 export enum ELang {
@@ -17,10 +18,9 @@ export enum ELang {
 export class SwitchLangComponent {
   private _translate = inject(TranslateService);
 
-  private _ecoc_lang = 'ecoc_lang';
-  public currentLang = localStorage.getItem(this._ecoc_lang) || ELang.en;
-  public en = 'en';
-  public ua = 'ua';
+  public currentLang = localStorage.getItem(ECOC_LANG) || ELang.en;
+  public en = ELang.en;
+  public ua = ELang.ua;
   public langMenu = [this.en, this.ua];
 
   constructor() {
@@ -32,6 +32,6 @@ export class SwitchLangComponent {
     this.langMenu = [this.en, this.ua];
     this.langMenu = this.langMenu.filter((l) => l !== lang);
     this._translate.use(lang);
-    localStorage.setItem(this._ecoc_lang, lang);
+    localStorage.setItem(ECOC_LANG, lang);
   }
 }

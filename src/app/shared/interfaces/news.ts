@@ -1,11 +1,18 @@
 export interface INews {
   id: string;
-  description: string;
-  content: string;
-  created_at: string;
-  updated_at: string;
+  ua: {
+    title: string;
+    description: string;
+    content: string;
+  };
+  en: {
+    title: string;
+    description: string;
+    content: string;
+  };
   img_url: string;
   ref: string;
-  title: string;
   status: 'draft' | 'published';
+  created_at: string;
+  updated_at: string;
 }

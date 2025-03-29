@@ -12,7 +12,7 @@
         {{ article().created_at | date : "fullDate" : undefined : dateLang() }}
       </span>
       <h3 class="article__title">
-        {{ article().title }}
+        {{ article()[lang()].title }}
       </h3>
     </div>
   </a>

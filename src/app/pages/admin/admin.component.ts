@@ -1,4 +1,11 @@
-import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
+import {
+  Component,
+  computed,
+  DestroyRef,
+  inject,
+  OnInit,
+  signal,
+} from '@angular/core';
 
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzTableModule } from 'ng-zorro-antd/table';
@@ -8,7 +15,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzModalService } from 'ng-zorro-antd/modal';
 
-import { HeaderMenuComponent } from '@shared/components';
+import { ELang, HeaderMenuComponent } from '@shared/components';
 import { NewsFirebaseService } from '@shared/services';
 import { INews } from '@shared/interfaces';
 
@@ -18,9 +25,10 @@ import {
   AddNewsModalService,
   LoginComponent,
 } from './components';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { AuthService } from 'src/app/auth.service';
+import { ECOC_LANG } from '@shared/constants';
 
 @Component({
   selector: 'app-admin',
@@ -44,17 +52,22 @@ import { AuthService } from 'src/app/auth.service';
   providers: [NzModalService],
 })
 export class AdminComponent implements OnInit {
-  private destroyRef = inject(DestroyRef);
-  private _auth = inject(AuthService);
   private _newsFirebase = inject(NewsFirebaseService);
+  private _auth = inject(AuthService);
   private _addNews = inject(AddNewsModalService);
+  private _translate = inject(TranslateService);
   private modal = inject(NzModalService);
+  private destroyRef = inject(DestroyRef);
 
   public isAuth = signal(false);
   public isAuthLoading = signal(true);
 
   public news: INews[] = [];
   public isLoading = signal(true);
+
+  public currentLang = localStorage.getItem(ECOC_LANG) || ELang.en;
+  private _lang = signal(this.currentLang);
+  public lang = computed(() => this._lang() as keyof Pick<INews, 'en' | 'ua'>);
 
   ngOnInit(): void {
     this._getNews();
@@ -73,6 +86,14 @@ export class AdminComponent implements OnInit {
 
       this.isAuthLoading.set(false);
     });
+
+    this._translate.onLangChange
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (resp) => {
+          this._lang.set(resp.lang);
+        },
+      });
   }
 
   private _getNews() {
@@ -104,7 +125,7 @@ export class AdminComponent implements OnInit {
   public delete(news: INews) {
     this.modal.confirm({
       nzTitle: '<i>Do you Want to delete these news?</i>',
-      nzContent: `<b>${news.title}</b>`,
+      nzContent: `<b>${news[this.lang()].title}</b>`,
       nzOnOk: () => {
         this._newsFirebase.remove(news.id).subscribe({
           next: () => {

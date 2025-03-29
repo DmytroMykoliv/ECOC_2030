@@ -44,7 +44,7 @@
           </tr>
         </thead>
         <tbody>
-          @for (data of basicTable.data; track data.title) {
+          @for (data of basicTable.data; track data.id) {
           <tr>
             <td>{{ data.created_at | date : "dd.mm.yyyy" }}</td>
             <td class="admin-table__td admin-table__td--img">
@@ -54,7 +54,7 @@
                 [nzSrc]="data.img_url"
               ></nz-avatar>
             </td>
-            <td>{{ data.title }}</td>
+            <td>{{ data[lang()].title }}</td>
             <td>{{ data.status | titlecase }}</td>
             <td class="admin-table__td">
               <button nz-button nzShape="circle" (click)="openAddModal(data)">
