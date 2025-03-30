@@ -14,9 +14,9 @@
       <div nz-carousel-content>
         <div class="carousel__slide">
           @if (!isMobile) { @for (ref of slide.items; track $index) {
-          <img src="/images/partners/{{ ref }}" [alt]="ref" />
+          <img src="images/partners/{{ ref }}" [alt]="ref" />
           } } @else {
-          <img src="/images/partners/{{ slide }}" [alt]="slide" />
+          <img src="images/partners/{{ slide }}" [alt]="slide" />
           }
         </div>
       </div>
