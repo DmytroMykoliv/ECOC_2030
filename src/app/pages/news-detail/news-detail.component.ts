@@ -10,14 +10,17 @@ import {
 } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { NewsListComponent } from '../home/components';
 import { HeaderMenuComponent } from '@shared/components';
-import { NewsFirebaseService } from '@shared/services';
+import {
+  ChangeLangDetectorService,
+  NewsFirebaseService,
+} from '@shared/services';
 import { INews } from '@shared/interfaces';
 import { filter } from 'rxjs';
 
@@ -41,27 +44,18 @@ export class NewsDetailComponent implements OnInit {
   private _cdr = inject(ChangeDetectorRef);
   private destroyRef = inject(DestroyRef);
   private _newsFirebase = inject(NewsFirebaseService);
-  private _translate = inject(TranslateService);
+  private _langDetector = inject(ChangeLangDetectorService);
 
   private _ref = '';
 
   public article?: INews;
   public isLoading = signal(false);
-  private _currentLang = signal(this._translate.currentLang);
+
+  public lang = computed(() => this._langDetector.lang());
 
   public dateLang = computed(() => {
-    return this._currentLang() === 'ua' ? 'uk' : 'en';
+    return this.lang() === 'ua' ? 'uk' : 'en';
   });
-
-  constructor() {
-    this._translate.onLangChange
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe({
-        next: (langEvent) => {
-          this._currentLang.set(langEvent.lang);
-        },
-      });
-  }
 
   ngOnInit(): void {
     this._ref = this._route.snapshot.params['ref'];

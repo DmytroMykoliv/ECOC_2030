@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  computed,
   DestroyRef,
   inject,
   input,
@@ -11,7 +12,10 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { INews } from '@shared/interfaces';
-import { NewsFirebaseService } from '@shared/services';
+import {
+  ChangeLangDetectorService,
+  NewsFirebaseService,
+} from '@shared/services';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NewsItemComponent } from 'src/app/pages/news/components';
 
@@ -28,9 +32,14 @@ export class NewsListComponent {
   private _cdr = inject(ChangeDetectorRef);
   private destroyRef = inject(DestroyRef);
   private _newsFirebase = inject(NewsFirebaseService);
+  private _langDetector = inject(ChangeLangDetectorService);
 
   public news: INews[] = [];
   public isLoading = signal(false);
+
+  public dateLang = computed(() => {
+    return this._langDetector.lang() === 'ua' ? 'uk' : 'en';
+  });
 
   ngOnInit(): void {
     this._getNews();

@@ -4,7 +4,7 @@
   <div class="news__list">
     @for (article of news; track article.id) {
     <div class="news__col">
-      <app-news-item [article]="article" />
+      <app-news-item [article]="article" [dateLang]="dateLang()" />
     </div>
     }
   </div>

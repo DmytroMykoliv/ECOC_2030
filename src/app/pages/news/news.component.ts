@@ -8,13 +8,16 @@ import {
   OnInit,
   signal,
 } from '@angular/core';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 
 import { HeaderMenuComponent } from '@shared/components';
-import { NewsFirebaseService } from '@shared/services';
+import {
+  ChangeLangDetectorService,
+  NewsFirebaseService,
+} from '@shared/services';
 import { INews } from '@shared/interfaces';
 import { RouterModule } from '@angular/router';
 import { NewsItemComponent, NewsItemDesktopComponent } from './components';
@@ -40,27 +43,16 @@ export class NewsComponent implements OnInit {
   private _cdr = inject(ChangeDetectorRef);
   private destroyRef = inject(DestroyRef);
   private _newsFirebase = inject(NewsFirebaseService);
-  private _translate = inject(TranslateService);
+  private _langDetector = inject(ChangeLangDetectorService);
 
   public news: INews[] = [];
   public newsToShow: INews[] = [];
   public isLoading = signal(false);
   public isTablet = window.innerWidth < 1024;
-  private _currentLang = signal(this._translate.currentLang);
 
   public dateLang = computed(() => {
-    return this._currentLang() === 'ua' ? 'uk' : 'en';
+    return this._langDetector.lang() === 'ua' ? 'uk' : 'en';
   });
-
-  constructor() {
-    this._translate.onLangChange
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe({
-        next: (langEvent) => {
-          this._currentLang.set(langEvent.lang);
-        },
-      });
-  }
 
   ngOnInit(): void {
     this._getNews();

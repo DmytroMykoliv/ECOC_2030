@@ -1,0 +1,9 @@
+.home-section {
+  &__desc {
+    ::ng-deep {
+      a {
+        color: #886f00;
+      }
+    }
+  }
+}

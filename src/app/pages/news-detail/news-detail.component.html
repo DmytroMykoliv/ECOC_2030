@@ -8,14 +8,17 @@
       <div class="container article__head">
         <div class="article__head-info">
           <h1 class="article__title">
-            {{ article?.title }}
+            {{ article?.[lang()]?.title }}
           </h1>
           <span class="article__date">
             {{
               article?.created_at | date : "fullDate" : undefined : dateLang()
             }}
           </span>
-          <p class="article__desc" [innerHTML]="article?.description"></p>
+          <p
+            class="article__desc"
+            [innerHTML]="article?.[lang()]?.description"
+          ></p>
         </div>
 
         <div class="article__head-img">
@@ -31,7 +34,7 @@
     <section class="article__section">
       <div
         class="container article__content"
-        [innerHTML]="article?.content"
+        [innerHTML]="article?.[lang()]?.content"
       ></div>
     </section>
   </nz-spin>

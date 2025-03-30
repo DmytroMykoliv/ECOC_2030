@@ -10,18 +10,20 @@
   &__prehistory {
     &-content {
       display: flex;
-      gap: 150px;
+      gap: 7%;
     }
   }
 
   &__anchor {
+    width: 28%;
+
     &-menu {
       position: sticky;
       top: 110px;
     }
 
     &-link {
-      font-weight: bold;
+      font-weight: 500;
     }
 
     &-list {
@@ -72,6 +74,10 @@
     }
   }
 
+  &__anchor-desc {
+    width: 65%;
+  }
+
   &__ecoc {
     position: relative;
   }
@@ -83,8 +89,10 @@
       }
     }
 
-    .ant-anchor-link-active > .ant-anchor-link-title {
-      color: var(--primary-yellow);
+    .ant-anchor-link-active > .ant-anchor-link-title,
+    .ant-anchor-link > .ant-anchor-link-title:hover {
+      color: #000000d9;
+      font-weight: bold;
     }
 
     .ant-anchor-ink-ball {
@@ -123,6 +131,10 @@
           }
         }
       }
+    }
+
+    &__anchor-desc {
+      width: auto;
     }
   }
 }

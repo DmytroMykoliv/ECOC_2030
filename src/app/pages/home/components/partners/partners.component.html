@@ -10,13 +10,13 @@
       [nzAutoPlay]="false"
       [nzAutoPlaySpeed]="6000"
     >
-      @for (slide of partners; track $index) {
+      @for (slide of partners(); track $index) {
       <div nz-carousel-content>
         <div class="carousel__slide">
-          @if (!isMobile) { @for (item of slide.items; track $index) {
-          <h3 class="carousel__title">{{ item }}</h3>
+          @if (!isMobile) { @for (ref of slide.items; track $index) {
+          <img src="/images/partners/{{ ref }}" [alt]="ref" />
           } } @else {
-          <h3 class="carousel__title">{{ slide }}</h3>
+          <img src="/images/partners/{{ slide }}" [alt]="slide" />
           }
         </div>
       </div>

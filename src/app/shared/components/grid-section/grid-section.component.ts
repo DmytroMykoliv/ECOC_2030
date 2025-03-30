@@ -1,6 +1,7 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { NzSafeAny } from 'ng-zorro-antd/core/types';
+import { IGridContent } from '@shared/interfaces';
+import { ChangeLangDetectorService } from '@shared/services';
 
 @Component({
   selector: 'app-grid-section',
@@ -13,5 +14,9 @@ import { NzSafeAny } from 'ng-zorro-antd/core/types';
   ],
 })
 export class GridSectionComponent {
-  public content: NzSafeAny = input();
+  public content = input<IGridContent>();
+
+  private _langDetector = inject(ChangeLangDetectorService);
+
+  public lang = computed(() => this._langDetector.lang());
 }
