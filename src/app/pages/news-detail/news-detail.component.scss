@@ -6,6 +6,10 @@
   &__section {
     padding: 50px 0;
     background-color: var(--main-bg);
+
+    &:not(:first-child) {
+      padding: 0 0 50px;
+    }
   }
 
   &__head {
@@ -40,6 +44,7 @@
     font-size: 18px;
   }
 
+  &__desc,
   &__content {
     ::ng-deep {
       ul {
@@ -68,6 +73,12 @@
         justify-content: center;
         height: 380px;
       }
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__section {
+      padding: 0 0 50px;
     }
   }
 }

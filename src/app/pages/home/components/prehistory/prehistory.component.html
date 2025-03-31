@@ -1,0 +1,39 @@
+<div class="prehistory">
+  <aside class="prehistory__anchor">
+    <nz-anchor
+      class="prehistory__anchor-menu"
+      [nzOffsetTop]="isMobile ? 350 : 110"
+      nzBounds="50"
+      [nzAffix]="false"
+      [nzShowInkInFixed]="true"
+      (nzChange)="handleChange($event)"
+    >
+      @for (link of prehistory(); track $index) {
+      <nz-link
+        class="prehistory__anchor-link"
+        nzHref="#{{ link.anchor }}"
+        [nzTitle]="link.anchorTitle"
+      ></nz-link>
+      }
+    </nz-anchor>
+  </aside>
+
+  <aside class="prehistory__anchor-desc">
+    <ul class="prehistory__anchor-list">
+      @for (item of prehistory(); track $index) {
+      <li
+        [id]="item.anchor"
+        [class.active]="activeAnchor === '#' + item.anchor"
+      >
+        <h3>{{ item.title }}</h3>
+        @if (isMobile) {
+        <h4>
+          <i>{{ item.anchorTitle }}</i>
+        </h4>
+        }
+        <p>{{ item.content }}</p>
+      </li>
+      }
+    </ul>
+  </aside>
+</div>

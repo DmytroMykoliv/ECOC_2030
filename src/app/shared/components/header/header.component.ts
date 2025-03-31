@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { NgStyle } from '@angular/common';
 
 import { NzAffixModule } from 'ng-zorro-antd/affix';
 
@@ -27,6 +28,7 @@ import { filter } from 'rxjs';
     SwitchLangComponent,
     BurgerMenuComponent,
     NzAffixModule,
+    NgStyle,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',

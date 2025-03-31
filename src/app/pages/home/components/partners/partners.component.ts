@@ -26,7 +26,11 @@ export class PartnersComponent {
   public partners = computed(() => {
     let partners = [
       {
-        items: [`zmin_logo_${this.lang()}.svg`, `lviv_rada_${this.lang()}.svg`],
+        items: [
+          `ESK-logo-poziom-${this.lang()}.webp`,
+          `zmin_logo_${this.lang()}.svg`,
+          `lviv_rada_${this.lang()}.svg`,
+        ],
       },
       // {
       //   items: ['item 4', 'item 5', 'item 6'],

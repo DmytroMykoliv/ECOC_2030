@@ -34,6 +34,13 @@
     color: #fff;
   }
 
+  @media (max-width: 767px) {
+    &-wrapper {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+
   ::ng-deep {
     .slick-dots li,
     .slick-dots li button {
@@ -46,6 +53,12 @@
 
     .slick-dots li.slick-active {
       width: 30px;
+    }
+
+    @media (max-width: 767px) {
+      .slick-dots li button {
+        background: #000;
+      }
     }
   }
 }

@@ -15,10 +15,10 @@
               article?.created_at | date : "fullDate" : undefined : dateLang()
             }}
           </span>
-          <p
+          <div
             class="article__desc"
             [innerHTML]="article?.[lang()]?.description"
-          ></p>
+          ></div>
         </div>
 
         <div class="article__head-img">
