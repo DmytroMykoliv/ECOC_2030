@@ -13,7 +13,7 @@ export interface IPrehistory {
 const prehistoryUA: IPrehistoryContent[] = [
   {
     anchor: 'nzHref_anchor1',
-    anchorTitle: '2016',
+    anchorTitle: '2011–2016',
     title: 'Львівський місяць на Вроцлав ЄСК 2016',
     content: `
       Ідея Львова як потенційної ЄСК проростає із середовища мистецького об’єднання «Дзиґа» 2010-х та українсько-польської співпраці у сфері культури, зокрема між Львовом та Любліном. У 2011 році це польське місто готувало заявку на отримання титулу ЄСК й мало задум на один місяць передати цей статус Львову як партнеру. Але тоді у конкурсі перемогло інше місто у Польщі — Вроцлав. І «Львівський місяць культури» провели в межах програми Вроцлава ЄСК 2016: тоді, впродовж квітня, там відбувались концерти українських виконавців, презентації книжок, кінопокази та дискусії, ІІІ триєнале сучасного українського мистецтва «Український Зріз».
@@ -64,7 +64,7 @@ const prehistoryUA: IPrehistoryContent[] = [
 const prehistoryEN: IPrehistoryContent[] = [
   {
     anchor: 'nzHref_anchor1',
-    anchorTitle: '2016',
+    anchorTitle: '2011–2016',
     title: 'Lviv Month in Wroclaw’s ECoC 2016',
     content: `
         The idea of Lviv as a potential ECoC emerged from the environment of the Dzyga artistic association of the 2010s and Ukrainian-Polish cooperation in the field of culture, particularly between Lviv and Lublin. In 2011, this Polish city was preparing an application for the title of ECoC and planned to transfer this status to Lviv as a partner for one month. But then another Polish city, Wroclaw, won the competition. And the Lviv Culture Month was held as part of Wroclaw’s 2016 ECoC program: in April, it hosted concerts by Ukrainian artists, book presentations, film screenings and discussions, and the Third Triennial of Contemporary Ukrainian Art «Ukrainian Cross-Section».

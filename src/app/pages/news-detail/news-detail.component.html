@@ -5,7 +5,7 @@
 <main class="article">
   <nz-spin [nzSpinning]="isLoading()">
     <section class="article__section">
-      <div class="container article__head">
+      <div class="container container-news article__head">
         <div class="article__head-info">
           <h1 class="article__title">
             {{ article?.[lang()]?.title }}
@@ -33,7 +33,7 @@
 
     <section class="article__section">
       <div
-        class="container article__content"
+        class="container container-news article__content"
         [innerHTML]="article?.[lang()]?.content"
       ></div>
     </section>
