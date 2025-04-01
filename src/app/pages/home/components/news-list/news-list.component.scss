@@ -8,7 +8,7 @@
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     row-gap: 2rem;
-    padding: 3rem 0;
+    padding: 1rem 0;
   }
 
   &__col {
@@ -35,7 +35,7 @@
 
     &__list {
       column-gap: 2rem;
-      padding: 1rem 0;
+      padding: 3rem 0;
     }
 
     &__col {
