@@ -8,12 +8,12 @@
   <aside class="home-section__aside home-section__aside--right">
     <div
       class="home-section__desc"
-      [innerHTML]="content()?.block1?.[lang()] || 'In progress'"
+      [innerHTML]="content()?.block1?.[lang()] || (content()?.title ? 'In progress' : '')"
     ></div>
 
     <div
       class="home-section__desc"
-      [innerHTML]="content()?.block2?.[lang()] || 'In progress'"
+      [innerHTML]="content()?.block2?.[lang()] || ''"
     ></div>
   </aside>
 </div>
