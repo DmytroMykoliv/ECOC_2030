@@ -3,7 +3,7 @@
   font-family: "GIZGravurTTCyr-CondBold";
   font-style: normal;
   font-weight: bold;
-  src: url("./GIZGravurTTCyr-CondBold.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/GIZGravurTTCyr-CondBold.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 @font-face {
@@ -11,21 +11,21 @@
   font-family: "URWDIN";
   font-style: normal;
   font-weight: bold;
-  src: url("./URWDIN-Bold.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/URWDIN-Bold.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "URWDIN";
   font-style: italic;
   font-weight: bold;
-  src: url("./URWDIN-BoldItalic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/URWDIN-BoldItalic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "URWDIN";
   font-style: normal;
   font-weight: 900;
-  src: url("./URWDIN-Black.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/URWDIN-Black.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* open-sans-regular - latin */
@@ -34,7 +34,7 @@
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: url("./open-sans-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/open-sans-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* open-sans-500 - latin */
 @font-face {
@@ -42,7 +42,7 @@
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 500;
-  src: url("./open-sans-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/open-sans-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* open-sans-700 - latin */
 @font-face {
@@ -50,5 +50,5 @@
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
-  src: url("./open-sans-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/open-sans-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
