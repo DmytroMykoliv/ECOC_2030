@@ -3,7 +3,7 @@
     <div class="header__container container">
       @if (!isMobile) {
       <nav class="header-nav">
-        <ul class="header-nav__list">
+        <ul class="header-nav__list" [class.home]="isHomePage()">
           @if (!isHomePage()) {
           <li class="header-nav__item">
             <a routerLink="/">

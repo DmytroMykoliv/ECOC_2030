@@ -84,6 +84,29 @@
     }
   }
 
+  @media (max-width: 991px) {
+    &__anchor {
+      &-list {
+        &::before {
+          left: -35px;
+        }
+
+        & > li {
+          &:before {
+            left: -47px;
+          }
+        }
+      }
+    }
+
+    ::ng-deep {
+      .ant-anchor,
+      .ant-avatar {
+        font-size: 12px;
+      }
+    }
+  }
+
   @media (max-width: 767px) {
     &__anchor {
       display: none;
