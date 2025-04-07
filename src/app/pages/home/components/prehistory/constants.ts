@@ -53,7 +53,7 @@ const prehistoryUA: IPrehistoryContent[] = [
   },
   {
     anchor: 'nzHref_anchor6',
-    anchorTitle: 'Зараз — осінь 2025  ',
+    anchorTitle: 'Зараз-вересень 2025',
     title: 'Підготовка фінальної заявки',
     content: `
       Зараз ми тут! У вересні 2025-го Львів має подати більш деталізовану аплікацію. Певне коло питань, на які слід звернути увагу, окреслені у звіті експертної групи, що фактично є відгуком на заявку міста у першому турі конкурсу. Комісія оцінювала аплікацію за шістьма критеріями, які окреслюють спектр очікувань від міст-кандидатів: внесок у довгострокову стратегію міста, культурне й  мистецьке наповнення, європейський вимір, інформаційно-просвітницька діяльність / залучення аудиторій, управління, спроможність до реалізації. Тож попереду — нові зустрічі, продумування й деталізація програми та проєктів, комунікація з партнерами і ще багато цікавих процесів. Словом, ми у процесі!
@@ -104,7 +104,7 @@ const prehistoryEN: IPrehistoryContent[] = [
   },
   {
     anchor: 'nzHref_anchor6',
-    anchorTitle: 'Now – autumn 2025',
+    anchorTitle: 'Now-September 2025',
     title: 'Preparation of the final application',
     content: `
     Now we are here! In September 2025, Lviv will have to submit a more detailed application. A certain range of issues to be addressed is outlined in the expert group’s report, which is actually a response to the city’s application in the first round of the competition. The Commission evaluated the application according to six criteria that outline the range of expectations from the candidate cities: contribution to the city’s long-term strategy, cultural and artistic content, European dimension, outreach/audience engagement, governance, and implementation capacity. So there are new meetings ahead, thinking over and detailing the program and projects, communication with partners, and many more interesting processes. In short, we are on the way!
