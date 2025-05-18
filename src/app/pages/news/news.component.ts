@@ -66,10 +66,12 @@ export class NewsComponent implements OnInit {
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (response) => {
-          this.news = response.filter((a) => a.status === 'published');
-          this.newsToShow = response
+          this.news = response
             .filter((a) => a.status === 'published')
-            .slice(0, 2);
+            .sort(
+              (a, b) => Date.parse(b.created_at) - Date.parse(a.created_at)
+            );
+          this.newsToShow = this.news.slice(0, 2);
 
           this.isLoading.set(false);
           this._cdr.markForCheck();
@@ -78,6 +80,6 @@ export class NewsComponent implements OnInit {
   }
 
   public loadMore() {
-    this.newsToShow = this.news.slice(0, this.newsToShow.length + 1);
+    this.newsToShow = this.news.slice(0, this.newsToShow.length + 2);
   }
 }

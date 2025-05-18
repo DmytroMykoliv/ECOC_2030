@@ -55,7 +55,9 @@ export class NewsListComponent {
         next: (response) => {
           this.news = response
             .filter((a) => a.status === 'published')
+            .sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at))
             .slice(0, 2);
+
           this.isLoading.set(false);
 
           this._cdr.markForCheck();
