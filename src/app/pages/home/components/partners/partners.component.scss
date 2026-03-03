@@ -42,6 +42,10 @@
   }
 
   ::ng-deep {
+    .slick-dots-bottom {
+      bottom: 0px;
+    }
+
     .slick-dots li,
     .slick-dots li button {
       height: 5px;
@@ -55,10 +59,9 @@
       width: 30px;
     }
 
-    @media (max-width: 767px) {
-      .slick-dots li button {
-        background: #000;
-      }
+    .slick-dots li button {
+      // background: var(--primary-yellow);;
+      background: #000;
     }
   }
 }

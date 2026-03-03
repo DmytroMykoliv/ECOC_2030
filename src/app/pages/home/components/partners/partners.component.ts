@@ -27,14 +27,18 @@ export class PartnersComponent {
     let partners = [
       {
         items: [
-          `ESK-logo-poziom-${this.lang()}.webp`,
-          `zmin_logo_${this.lang()}.svg`,
           `lviv_rada_${this.lang()}.svg`,
+          `isc_logo_${this.lang()}.png`,
+          `irf_logo_${this.lang()}.png`,
         ],
       },
-      // {
-      //   items: ['item 4', 'item 5', 'item 6'],
-      // },
+      {
+        items: [
+          `zmin_logo_${this.lang()}.svg`,
+          `virmenska_35_logo_${this.lang()}.png`,
+          `ESK-logo-poziom-${this.lang()}.webp`,
+        ],
+      },
     ];
 
     if (window.innerWidth <= 580) {
